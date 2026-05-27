@@ -69,7 +69,7 @@ export default function Pricing({ data }) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           className="text-center mb-14"
         >
           {/* Premium label chip */}
@@ -101,7 +101,7 @@ export default function Pricing({ data }) {
               key={plan.duration}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px 0px -80px 0px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="relative"
             >
@@ -202,7 +202,7 @@ export default function Pricing({ data }) {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 mt-10 text-sm text-white/55"
         >
           <span className="flex items-center gap-1.5">

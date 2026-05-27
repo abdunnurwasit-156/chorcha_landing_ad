@@ -33,8 +33,11 @@ export default function Instructors({ data }) {
     el.scrollBy({ left: dir * (CARD_WIDTH + GAP) * 2, behavior: "smooth" });
   }, []);
 
-  // Auto-scroll — pause on hover
+  // Auto-scroll — desktop only, pause on hover
+  const isMobile = () => window.matchMedia("(max-width: 639px)").matches;
+
   const startAuto = useCallback(() => {
+    if (isMobile()) return; // disable on mobile — conflicts with touch scroll
     autoRef.current = setInterval(() => {
       const el = trackRef.current;
       if (!el) return;
@@ -68,7 +71,7 @@ export default function Instructors({ data }) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           className="text-center mb-10 sm:mb-14 px-4 sm:px-6"
         >
           <span className="text-xs font-semibold tracking-widest uppercase mb-4 block text-gradient-cool">
@@ -128,7 +131,7 @@ export default function Instructors({ data }) {
                   key={inst.name}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "0px 0px -80px 0px" }}
                   transition={{ duration: 0.5, delay: i * 0.07 }}
                   whileHover={{ y: -6 }}
                   className="group card-glass border border-white/8 rounded-3xl overflow-hidden flex-shrink-0 transition-all duration-300 cursor-default"
@@ -167,7 +170,7 @@ export default function Instructors({ data }) {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           transition={{ delay: 0.3 }}
           className="flex justify-center mt-10"
         >

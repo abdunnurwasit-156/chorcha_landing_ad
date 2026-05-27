@@ -34,7 +34,7 @@ export default function ComparisonTable({ data }) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           className="text-center mb-10 sm:mb-14"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4">
@@ -48,7 +48,7 @@ export default function ComparisonTable({ data }) {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           transition={{ duration: 0.5 }}
           className="card-glass border border-white/8 rounded-2xl overflow-hidden"
         >
@@ -82,7 +82,7 @@ export default function ComparisonTable({ data }) {
               key={row.feature}
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px 0px -80px 0px" }}
               transition={{ delay: i * 0.06 }}
               className={`grid grid-cols-[1.4fr_1fr_1fr] sm:grid-cols-[1fr_1fr_1fr] md:grid-cols-[1fr_180px_180px] ${
                 i < rows.length - 1 ? 'border-b border-white/[0.05]' : ''

@@ -75,7 +75,7 @@ export default function Toppers({ data }) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           className="text-center mb-14"
         >
           <span className="text-xs font-semibold tracking-widest uppercase mb-4 block text-gradient-cool">
@@ -95,7 +95,7 @@ export default function Toppers({ data }) {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "0px 0px -80px 0px" }}
         transition={{ duration: 0.8 }}
         className="relative marquee-fade-bottom"
       >

@@ -147,8 +147,8 @@
 .animate-float-slow   { animation: float-slow 7s ease-in-out infinite; }
 .animate-pulse-glow   { animation: pulse-glow 2.5s ease-in-out infinite; }
 .animate-fade-up      { animation: fade-up 0.6s ease-out forwards; }
-.animate-blob-a       { animation: blob-drift-a 18s ease-in-out infinite; }
-.animate-blob-b       { animation: blob-drift-b 22s ease-in-out infinite; }
+.animate-blob-a       { animation: blob-drift-a 18s ease-in-out infinite; will-change: transform; }
+.animate-blob-b       { animation: blob-drift-b 22s ease-in-out infinite; will-change: transform; }
 
 /* ===== Marquee (Toppers wall) ===== */
 @keyframes marquee-left  { from { transform: translateX(0); }       to { transform: translateX(-50%); } }

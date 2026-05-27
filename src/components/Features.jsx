@@ -73,7 +73,7 @@ export default function Features({ data }) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           className="text-center mb-12 sm:mb-16"
         >
           <span className="text-xs font-semibold tracking-widest uppercase mb-4 block text-gradient-cool">
@@ -100,7 +100,7 @@ export default function Features({ data }) {
                 key={feature.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "0px 0px -80px 0px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 whileHover={{ y: -4 }}
                 className={`group relative p-6 rounded-2xl border transition-all duration-300 cursor-default card-glass ${c.border} hover:shadow-2xl ${c.glow}`}

@@ -10,7 +10,7 @@ export default function CTABanner({ data }) {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           className="relative rounded-3xl overflow-hidden p-6 sm:p-10 md:p-12 text-center border border-white/10"
           style={{
             background: 'linear-gradient(135deg, rgba(167,139,250,0.18) 0%, rgba(244,114,182,0.14) 50%, rgba(251,146,60,0.14) 100%)',

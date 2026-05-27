@@ -52,7 +52,7 @@ function SubjectAccordion({ subj, isOpen, onToggle }) {
     <motion.div
       initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: "0px 0px -80px 0px" }}
       transition={{ duration: 0.4 }}
       className="card-glass border border-white/8 rounded-2xl overflow-hidden"
     >
@@ -126,7 +126,7 @@ export default function Syllabus({ data }) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           className="text-center mb-12"
         >
           <span className="text-xs font-semibold tracking-widest uppercase mb-4 block text-gradient-cool">

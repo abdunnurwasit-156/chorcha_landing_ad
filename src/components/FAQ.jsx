@@ -13,7 +13,7 @@ export default function FAQ({ data }) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           className="text-center mb-12 sm:mb-16"
         >
           <span className="text-xs font-semibold tracking-widest uppercase mb-4 block text-gradient-cool">
@@ -30,7 +30,7 @@ export default function FAQ({ data }) {
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px 0px -80px 0px" }}
               transition={{ delay: i * 0.07 }}
               className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                 open === i
@@ -51,14 +51,15 @@ export default function FAQ({ data }) {
                   {open === i ? <Minus size={13} /> : <Plus size={13} />}
                 </span>
               </button>
-              <AnimatePresence>
+              <AnimatePresence initial={false}>
                 {open === i && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.25, ease: 'easeInOut' }}
                     className="overflow-hidden"
+                    style={{ willChange: 'height, opacity' }}
                   >
                     <p className="px-4 sm:px-6 pb-4 sm:pb-5 text-sm sm:text-base text-white/50 leading-relaxed">{faq.a}</p>
                   </motion.div>

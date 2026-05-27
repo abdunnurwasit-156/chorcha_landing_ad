@@ -21,7 +21,7 @@ export default function BatchInfo() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           className="text-center mb-10 sm:mb-14"
         >
           <span className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest uppercase mb-5 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.04] text-white/60">
@@ -40,7 +40,7 @@ export default function BatchInfo() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           transition={{ duration: 0.55 }}
           className="card-glass border border-white/8 rounded-2xl p-6 sm:p-8"
         >
@@ -52,7 +52,7 @@ export default function BatchInfo() {
                   key={item.label}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "0px 0px -80px 0px" }}
                   transition={{ delay: i * 0.07 }}
                   className="flex items-start gap-3.5 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]"
                 >
@@ -74,7 +74,7 @@ export default function BatchInfo() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px 0px -80px 0px" }}
               transition={{ delay: INCLUSIONS.length * 0.07 }}
               className="sm:col-span-2 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 sm:p-5 rounded-xl"
               style={{ background: 'linear-gradient(135deg, #00a6ac18, #6639c318)', border: '1px solid #6639c335' }}

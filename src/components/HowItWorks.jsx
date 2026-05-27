@@ -15,7 +15,7 @@ export default function HowItWorks({ data }) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
           className="text-center mb-12 sm:mb-16"
         >
           <span className="text-xs font-semibold tracking-widest uppercase mb-4 block text-gradient-cool">
@@ -38,7 +38,7 @@ export default function HowItWorks({ data }) {
                   key={step.step}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "0px 0px -80px 0px" }}
                   transition={{ duration: 0.6, delay: i * 0.15 }}
                   className="flex flex-col items-center text-center"
                 >

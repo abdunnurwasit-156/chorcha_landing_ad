@@ -23,7 +23,7 @@ export default function StatsBar({ data }) {
                 key={stat.label}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "0px 0px -80px 0px" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="flex items-center gap-3"
               >
