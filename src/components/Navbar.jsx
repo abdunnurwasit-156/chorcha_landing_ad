@@ -22,8 +22,8 @@ export default function Navbar({ page, activePage, onSwitch }) {
   useEffect(() => { setMenuOpen(false) }, [activePage])
 
   const navLinks = isHSC
-    ? ['ফিচার', 'সিলেবাস', 'ইন্সট্রাক্টর', 'রিভিউ', 'প্রাইসিং']
-    : ['ফিচার', 'মডেল টেস্ট', 'ইন্সট্রাক্টর', 'রিভিউ', 'FAQ']
+    ? ['ফিচার', 'সিলেবাস', 'টিচার', 'রিভিউ', 'প্রাইসিং']
+    : ['ফিচার', 'মডেল টেস্ট', 'টিচার', 'রিভিউ', 'FAQ']
 
   return (
     <motion.nav

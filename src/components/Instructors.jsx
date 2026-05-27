@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
-import { Star, Users, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { Star, Users, ChevronLeft, ChevronRight, ArrowRight, GraduationCap, BadgeCheck, Award } from "lucide-react";
 import { PAGES } from "../data/content";
 
 const subjectPalette = [
@@ -10,7 +10,7 @@ const subjectPalette = [
   { text: "text-amber-300",  dot: "bg-amber-500",  glow: "rgba(251,191,36,0.3)" },
 ];
 
-const CARD_WIDTH = 220; // px + gap — used for scroll step
+const CARD_WIDTH = 260; // px + gap — used for scroll step
 const GAP = 16;
 
 export default function Instructors({ data }) {
@@ -60,7 +60,7 @@ export default function Instructors({ data }) {
   }, [updateArrows, startAuto, stopAuto]);
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden">
+    <section className="pt-10 sm:pt-14 pb-16 sm:pb-20 md:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/3 left-[5%] w-[500px] h-[500px] rounded-full blur-[160px] opacity-[0.07] bg-violet-500" />
         <div className="absolute bottom-1/4 right-[5%] w-[500px] h-[500px] rounded-full blur-[160px] opacity-[0.07] bg-cyan-400" />
@@ -72,10 +72,10 @@ export default function Instructors({ data }) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -80px 0px" }}
-          className="text-center mb-10 sm:mb-14 px-4 sm:px-6"
+          className="text-center mb-8 sm:mb-12 px-4 sm:px-6"
         >
           <span className="text-xs font-semibold tracking-widest uppercase mb-4 block text-gradient-cool">
-            ইন্সট্রাক্টর
+            টিচার
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4">
             যাদের কাছ থেকে{" "}
@@ -141,17 +141,46 @@ export default function Instructors({ data }) {
                       alt={inst.name}
                       className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#060C09] via-[#060C09]/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#060C09] via-[#060C09]/40 to-transparent" />
+
+                    {/* Verified badge — top-right */}
+                    <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-black/55 backdrop-blur-md border border-white/15">
+                      <BadgeCheck size={12} className="text-cyan-300" strokeWidth={2.5} />
+                      <span className="text-[10px] font-semibold text-white/90">ভেরিফাইড</span>
+                    </div>
+
+                    {/* Subject chip — bottom-left over image */}
+                    <div className={`absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-black/55 backdrop-blur-md border ${c.text === 'text-violet-300' ? 'border-violet-400/40' : c.text === 'text-cyan-300' ? 'border-cyan-400/40' : c.text === 'text-pink-300' ? 'border-pink-400/40' : 'border-amber-400/40'}`}>
+                      <span className={`text-[11px] font-bold ${c.text}`}>{inst.subject}</span>
+                    </div>
                   </div>
 
                   {/* Info */}
                   <div className="px-4 py-4">
-                    <h3 className="text-sm font-bold text-white mb-0.5">{inst.name}</h3>
-                    <p className={`text-xs font-medium mb-3 ${c.text}`}>{inst.subject}</p>
-                    <div className="flex items-center gap-1.5 text-[11px] text-white/40">
-                      <Users size={11} />
-                      <span>{inst.students} শিক্ষার্থী</span>
-                    </div>
+                    {/* Name */}
+                    <h3 className="text-base font-bold text-white mb-2.5 truncate">{inst.name}</h3>
+
+                    {/* University row */}
+                    {inst.university && (
+                      <div className="flex items-center gap-2 mb-2">
+                        <GraduationCap size={13} className="text-white/40 flex-shrink-0" />
+                        <span className="text-xs text-white/75 font-medium truncate">
+                          {inst.university}
+                          {inst.degree && <span className="text-white/40"> · {inst.degree}</span>}
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Experience row */}
+                    {inst.experience && (
+                      <div className="flex items-center gap-2">
+                        <Award size={13} className="text-white/40 flex-shrink-0" />
+                        <span className="text-xs text-white/75 font-medium">
+                          {inst.experience} পড়ানোর অভিজ্ঞতা
+                        </span>
+                      </div>
+                    )}
+
                   </div>
                 </motion.div>
               );
@@ -176,7 +205,7 @@ export default function Instructors({ data }) {
             whileTap={{ scale: 0.97 }}
             className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border border-white/12 text-white/70 hover:text-white hover:border-white/25 hover:bg-white/[0.04] transition-all"
           >
-            সব ইন্সট্রাক্টর দেখো
+            সব টিচার দেখো
             <ArrowRight size={15} />
           </motion.button>
         </motion.div>
