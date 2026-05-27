@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import StatsBar from '../components/StatsBar'
+import SummaryStats from '../components/SummaryStats'
 import Features from '../components/Features'
 import AppShowcase from '../components/AppShowcase'
 import Syllabus from '../components/Syllabus'
@@ -19,7 +20,7 @@ export default function HSCPage({ activePage, onSwitch }) {
     <div>
       <Navbar page={PAGES.HSC} activePage={activePage} onSwitch={onSwitch} />
       <Hero data={hscData} />
-      <StatsBar data={hscData} />
+      <SummaryStats data={hscData} />
       <Features data={hscData} />
       <AppShowcase data={hscData} />
       <Syllabus data={hscData} />

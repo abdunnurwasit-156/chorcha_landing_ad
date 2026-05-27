@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Features from '../components/Features'
 import AppShowcase from '../components/AppShowcase'
-import ModelTestSchedule from '../components/ModelTestSchedule'
+import SummaryStats from '../components/SummaryStats'
 import HowItWorks from '../components/HowItWorks'
 import Instructors from '../components/Instructors'
 import Toppers from '../components/Toppers'
@@ -19,7 +19,7 @@ export default function AdmissionPage({ activePage, onSwitch }) {
       <Hero data={admissionData} />
       <Features data={admissionData} />
       <AppShowcase data={admissionData} />
-      <ModelTestSchedule data={admissionData} />
+      <SummaryStats data={admissionData} />
       <HowItWorks data={admissionData} />
       <Instructors data={admissionData} />
       <Toppers data={admissionData} />

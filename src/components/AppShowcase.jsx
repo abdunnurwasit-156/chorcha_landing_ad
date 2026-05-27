@@ -112,7 +112,7 @@ export default function AppShowcase({ data }) {
                 <div
                   className={`absolute inset-0 rounded-[36px] blur-2xl opacity-35 scale-90 ${v.bg}`}
                 />
-                <div className="relative w-52 sm:w-48 md:w-44 rounded-[36px] overflow-hidden shadow-2xl" style={{ aspectRatio: '9/19.5' }}>
+                <div className="relative w-64 sm:w-60 md:w-56 rounded-[36px] overflow-hidden shadow-2xl" style={{ aspectRatio: '9/19.5' }}>
                   <video
                     src={v.src}
                     autoPlay
@@ -124,7 +124,7 @@ export default function AppShowcase({ data }) {
                 </div>
               </div>
 
-              <p className="text-center text-sm text-white/55 mt-3 max-w-[180px]">
+              <p className="text-center text-sm sm:text-base text-white/60 mt-4 max-w-[220px]">
                 {v.desc}
               </p>
             </motion.div>

@@ -122,20 +122,17 @@ export default function Instructors({ data }) {
           <div
             ref={trackRef}
             className="flex gap-4 overflow-x-auto scroll-smooth px-10 sm:px-14 pb-2"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none", touchAction: "pan-x" }}
           >
             {data.instructors.map((inst, i) => {
               const c = subjectPalette[i % subjectPalette.length];
               return (
                 <motion.div
                   key={inst.name}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "0px 0px -80px 0px" }}
-                  transition={{ duration: 0.5, delay: i * 0.07 }}
                   whileHover={{ y: -6 }}
-                  className="group card-glass border border-white/8 rounded-3xl overflow-hidden flex-shrink-0 transition-all duration-300 cursor-default"
-                  style={{ width: CARD_WIDTH, boxShadow: `0 0 0 0 ${c.glow}` }}
+                  transition={{ duration: 0.25 }}
+                  className="group card-glass border border-white/8 rounded-3xl overflow-hidden flex-shrink-0 transition-shadow duration-300 cursor-default"
+                  style={{ width: CARD_WIDTH, boxShadow: `0 0 0 0 ${c.glow}`, willChange: "transform" }}
                 >
                   {/* Portrait */}
                   <div className="relative w-full overflow-hidden" style={{ aspectRatio: "3/4" }}>
