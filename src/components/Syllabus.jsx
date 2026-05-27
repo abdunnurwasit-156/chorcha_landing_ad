@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { BookOpen, ChevronDown, Play, PlayCircle, Clock, Lock } from 'lucide-react'
+import { BookOpen, ChevronDown, Play, PlayCircle, Clock, Lock, ChevronsDown } from 'lucide-react'
+
+const COLLAPSED_COUNT = 6
 
 function ChapterRow({ chapter }) {
   return (
@@ -47,6 +49,9 @@ function ChapterRow({ chapter }) {
 function SubjectAccordion({ subj, isOpen, onToggle }) {
   const list = subj.chapterList || []
   const availableCount = list.filter(c => c.available).length
+  const [showAll, setShowAll] = useState(false)
+  const hasMore = list.length > COLLAPSED_COUNT
+  const visibleList = showAll || !hasMore ? list : list.slice(0, COLLAPSED_COUNT)
 
   return (
     <motion.div
@@ -101,9 +106,21 @@ function SubjectAccordion({ subj, isOpen, onToggle }) {
           >
             <div className="px-3 sm:px-5 pb-4 sm:pb-5 pt-1 space-y-2 border-t border-white/5">
               <div className="pt-3" />
-              {list.map((chapter, i) => (
+              {visibleList.map((chapter, i) => (
                 <ChapterRow key={`${subj.name}-${i}`} chapter={chapter} />
               ))}
+              {hasMore && (
+                <button
+                  onClick={() => setShowAll(s => !s)}
+                  className="w-full mt-2 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-white/10 bg-white/[0.03] text-white/70 hover:text-white hover:border-white/20 hover:bg-white/[0.06] transition-all"
+                >
+                  {showAll ? (
+                    <>আরো কম দেখাও</>
+                  ) : (
+                    <>আরো {list.length - COLLAPSED_COUNT}টি অধ্যায় দেখো <ChevronsDown size={14} /></>
+                  )}
+                </button>
+              )}
             </div>
           </motion.div>
         )}
