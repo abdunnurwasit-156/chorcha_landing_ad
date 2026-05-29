@@ -143,12 +143,21 @@
   50% { transform: translate(-30px, 35px) scale(1.08); }
 }
 
-.animate-float        { animation: float 5s ease-in-out infinite; }
-.animate-float-slow   { animation: float-slow 7s ease-in-out infinite; }
+.animate-float        { transform: translateZ(0); backface-visibility: hidden; }
+.animate-float-slow   { transform: translateZ(0); backface-visibility: hidden; }
 .animate-pulse-glow   { animation: pulse-glow 2.5s ease-in-out infinite; }
 .animate-fade-up      { animation: fade-up 0.6s ease-out forwards; }
-.animate-blob-a       { animation: blob-drift-a 18s ease-in-out infinite; will-change: transform; }
-.animate-blob-b       { animation: blob-drift-b 22s ease-in-out infinite; will-change: transform; }
+.animate-blob-a       { transform: translateZ(0); backface-visibility: hidden; }
+.animate-blob-b       { transform: translateZ(0); backface-visibility: hidden; }
+
+/* Continuous motion only on larger screens — on phones these big blurred,
+   animated layers repaint constantly and cause visible flicker/jank. */
+@media (min-width: 640px) and (prefers-reduced-motion: no-preference) {
+  .animate-float      { animation: float 5s ease-in-out infinite; will-change: transform; }
+  .animate-float-slow { animation: float-slow 7s ease-in-out infinite; will-change: transform; }
+  .animate-blob-a     { animation: blob-drift-a 18s ease-in-out infinite; will-change: transform; }
+  .animate-blob-b     { animation: blob-drift-b 22s ease-in-out infinite; will-change: transform; }
+}
 
 /* ===== Marquee (Toppers wall) ===== */
 @keyframes marquee-left  { from { transform: translateX(0); }       to { transform: translateX(-50%); } }

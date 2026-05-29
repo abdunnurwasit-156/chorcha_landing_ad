@@ -122,7 +122,7 @@ export default function Instructors({ data }) {
           <div
             ref={trackRef}
             className="flex gap-4 overflow-x-auto scroll-smooth px-10 sm:px-14 pb-2"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none", touchAction: "pan-x" }}
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {data.instructors.map((inst, i) => {
               const c = subjectPalette[i % subjectPalette.length];
