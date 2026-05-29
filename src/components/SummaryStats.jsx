@@ -96,28 +96,45 @@ export default function SummaryStats({ data }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "0px 0px -80px 0px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                whileHover={{ y: -4 }}
-                className={`relative rounded-2xl p-5 sm:p-6 border ${stat.color.border} bg-gradient-to-br ${stat.color.bg} backdrop-blur-sm overflow-hidden group`}
+                whileHover={{ y: -6 }}
+                className={`relative rounded-2xl p-5 sm:p-6 border ${stat.color.border} bg-gradient-to-br ${stat.color.bg} backdrop-blur-sm overflow-hidden group transition-[border-color,box-shadow] duration-300 hover:border-white/25`}
                 style={{ boxShadow: `0 0 40px -12px ${stat.color.glow}` }}
               >
-                {/* Subtle corner shine */}
+                {/* Grid line texture — tighter, fades left→right */}
                 <div
-                  className="absolute -top-12 -right-12 w-24 h-24 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity"
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    backgroundImage: `linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)`,
+                    backgroundSize: '24px 24px',
+                    WebkitMaskImage: 'linear-gradient(to right, black 0%, black 40%, transparent 100%)',
+                    maskImage: 'linear-gradient(to right, black 0%, black 40%, transparent 100%)',
+                  }}
+                />
+
+                {/* Corner shine — grows & brightens on hover */}
+                <div
+                  className="absolute -top-12 -right-12 w-24 h-24 rounded-full blur-2xl opacity-30 group-hover:opacity-70 group-hover:scale-125 transition-all duration-500"
                   style={{ background: stat.color.glow }}
                 />
 
                 <div className="relative">
-                  <div className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center mb-4 bg-white/[0.04] border ${stat.color.border}`}>
+                  <div className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center mb-4 bg-white/[0.04] border ${stat.color.border} transition-all duration-300 group-hover:bg-white/[0.09] group-hover:scale-110 group-hover:-rotate-6`}>
                     <Icon size={18} className={stat.color.icon} strokeWidth={2.25} />
                   </div>
 
-                  <div className={`text-3xl sm:text-4xl md:text-5xl font-black ${stat.color.icon} mb-1.5 leading-none`}>
+                  <div className={`text-3xl sm:text-4xl md:text-5xl font-black ${stat.color.icon} mb-1.5 leading-none origin-left transition-transform duration-300 group-hover:scale-105`}>
                     {stat.value}
                   </div>
                   <p className="text-xs sm:text-sm text-white/65 leading-snug">
                     {stat.label}
                   </p>
                 </div>
+
+                {/* Animated accent underline on hover */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-[2px] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                  style={{ background: `linear-gradient(90deg, transparent, ${stat.color.glow}, transparent)` }}
+                />
               </motion.div>
             )
           })}

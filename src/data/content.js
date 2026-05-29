@@ -8,16 +8,15 @@ export const admissionData = {
   badge: "কলেজ অ্যাডমিশন ২০২৬",
   heroHeadline: "কলেজ অ্যাডমিশন পরীক্ষার সম্পূর্ণ প্রস্তুতি",
   heroHeadlineAccent: "এক জায়গায়",
-  heroSub:
-    "৪৫+ ক্লাস, ৫০+ লাইভ মডেল টেস্ট, আর Chorcha AI — একটাই প্যাকেজে সব কিছু",
+  heroSub: "৪৫+ ক্লাস, ৫০+ লাইভ মডেল টেস্ট, আর Chorcha AI",
   ctaPrimary: "অ্যাপ ডাউনলোড করো",
   ctaSecondary: "আরও জানো",
   trustLine: "১০ লাখ+ শিক্ষার্থী ইতিমধ্যেই শুরু করেছে",
   accentColor: "purple",
   heroStats: [
-    { value: "১০ লাখ+", label: "শিক্ষার্থী",      icon: "users",   color: "violet" },
-    { value: "৪৫+",     label: "লাইভ ক্লাস",     icon: "video",    color: "cyan" },
-    { value: "৫০+",     label: "মডেল টেস্ট",     icon: "clipboard",color: "pink" },
+    { value: "১০ লাখ+", label: "শিক্ষার্থী", icon: "users", color: "violet" },
+    { value: "৪৫+", label: "লাইভ ক্লাস", icon: "video", color: "cyan" },
+    { value: "৫০+", label: "মডেল টেস্ট", icon: "clipboard", color: "pink" },
   ],
   stats: [
     { value: "১০ লাখ+", label: "অ্যাপ ডাউনলোড", icon: "users" },
@@ -95,7 +94,8 @@ export const admissionData = {
       experience: "৮ বছর",
       students: "১২,৪০০+",
       rating: "৪.৯",
-      avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&h=625&fit=crop&crop=faces&q=80",
     },
     {
       name: "তাসনিম আক্তার",
@@ -105,7 +105,8 @@ export const admissionData = {
       experience: "৬ বছর",
       students: "৯,৮০০+",
       rating: "৪.৮",
-      avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&h=625&fit=crop&crop=faces&q=80",
     },
     {
       name: "ডা. ইমতিয়াজ আহমেদ",
@@ -115,7 +116,8 @@ export const admissionData = {
       experience: "৭ বছর",
       students: "৮,২০০+",
       rating: "৪.৯",
-      avatar: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=500&h=625&fit=crop&crop=faces&q=80",
     },
     {
       name: "মাহমুদ হোসেন",
@@ -125,7 +127,8 @@ export const admissionData = {
       experience: "৯ বছর",
       students: "১১,১০০+",
       rating: "৪.৭",
-      avatar: "https://images.unsplash.com/photo-1582015752624-e8b1c75e3711?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1582015752624-e8b1c75e3711?w=500&h=625&fit=crop&crop=faces&q=80",
     },
     {
       name: "নাফিসা রহমান",
@@ -135,7 +138,8 @@ export const admissionData = {
       experience: "৫ বছর",
       students: "৭,৩০০+",
       rating: "৪.৮",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&h=625&fit=crop&crop=faces&q=80",
     },
     {
       name: "সাকিব আল হাসান",
@@ -145,7 +149,8 @@ export const admissionData = {
       experience: "৭ বছর",
       students: "৬,৯০০+",
       rating: "৪.৯",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=625&fit=crop&crop=faces&q=80",
     },
     {
       name: "মারিয়াম বেগম",
@@ -155,7 +160,8 @@ export const admissionData = {
       experience: "১০ বছর",
       students: "৮,৫০০+",
       rating: "৪.৭",
-      avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&h=625&fit=crop&crop=faces&q=80",
     },
     {
       name: "তৌফিক এলাহী",
@@ -165,19 +171,74 @@ export const admissionData = {
       experience: "৬ বছর",
       students: "৫,৬০০+",
       rating: "৪.৮",
-      avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&h=625&fit=crop&crop=faces&q=80",
     },
   ],
   toppers: [
-    { name: "তানভীর আহমেদ",  college: "ঢাকা কলেজ",        quote: "AI ডাউট সলভার সবচেয়ে বেশি হেল্প করেছে।",                  avatar: "https://i.pravatar.cc/400?img=61", rank: "#১" },
-    { name: "ফারহানা ইসলাম", college: "হলিক্রস কলেজ",     quote: "মডেল টেস্ট আসল পরীক্ষার মতোই ছিল।",                       avatar: "https://i.pravatar.cc/400?img=44", rank: "#৩" },
-    { name: "সাইফুল ইসলাম",  college: "নটর ডেম কলেজ",     quote: "লিডারবোর্ড আমাকে প্রতিদিন পড়তে মোটিভেট করেছে।",          avatar: "https://i.pravatar.cc/400?img=67", rank: "#৫" },
-    { name: "নুসরাত জাহান",   college: "ভিকারুননিসা",      quote: "প্রশ্নব্যাংক এত গুছানো — পরীক্ষার আগে রিভাইজ সহজ হয়েছে।", avatar: "https://i.pravatar.cc/400?img=47", rank: "#৭" },
-    { name: "আরিফ হোসেন",     college: "রাজউক উত্তরা",      quote: "ঘরে বসেই এত ভালো প্রস্তুতি — আগে ভাবিনি।",                avatar: "https://i.pravatar.cc/400?img=15", rank: "#৯" },
-    { name: "রিফাত করিম",     college: "আদমজী ক্যান্টনমেন্ট", quote: "টপিক-ভিত্তিক টেস্ট দিয়ে দুর্বলতা ধরা সহজ হয়েছে।",        avatar: "https://i.pravatar.cc/400?img=33", rank: "মেধাতালিকায়" },
-    { name: "মেহজাবিন তাবাসসুম", college: "এসএফএক্স গ্রীনহেরাল্ড", quote: "Chorcha AI ২৪ ঘণ্টা পাশে ছিল — কখনো একা লাগেনি।",       avatar: "https://i.pravatar.cc/400?img=49", rank: "#২" },
-    { name: "ইশতিয়াক রহমান",   college: "ঢাকা সিটি কলেজ",   quote: "লাইভ মডেল টেস্ট দিয়ে কনফিডেন্স বেড়ে গেছে।",              avatar: "https://i.pravatar.cc/400?img=12", rank: "#১২" },
-    { name: "সুমাইয়া আক্তার",  college: "মতিঝিল আইডিয়াল",   quote: "এক প্যাকেজে সব — আলাদা কোচিং খুঁজতে হয়নি।",                avatar: "https://i.pravatar.cc/400?img=25", rank: "#৬" },
+    {
+      name: "তানভীর আহমেদ",
+      college: "ঢাকা কলেজ",
+      quote: "AI ডাউট সলভার সবচেয়ে বেশি হেল্প করেছে।",
+      avatar: "https://i.pravatar.cc/400?img=61",
+      rank: "#১",
+    },
+    {
+      name: "ফারহানা ইসলাম",
+      college: "হলিক্রস কলেজ",
+      quote: "মডেল টেস্ট আসল পরীক্ষার মতোই ছিল।",
+      avatar: "https://i.pravatar.cc/400?img=44",
+      rank: "#৩",
+    },
+    {
+      name: "সাইফুল ইসলাম",
+      college: "নটর ডেম কলেজ",
+      quote: "লিডারবোর্ড আমাকে প্রতিদিন পড়তে মোটিভেট করেছে।",
+      avatar: "https://i.pravatar.cc/400?img=67",
+      rank: "#৫",
+    },
+    {
+      name: "নুসরাত জাহান",
+      college: "ভিকারুননিসা",
+      quote: "প্রশ্নব্যাংক এত গুছানো — পরীক্ষার আগে রিভাইজ সহজ হয়েছে।",
+      avatar: "https://i.pravatar.cc/400?img=47",
+      rank: "#৭",
+    },
+    {
+      name: "আরিফ হোসেন",
+      college: "রাজউক উত্তরা",
+      quote: "ঘরে বসেই এত ভালো প্রস্তুতি — আগে ভাবিনি।",
+      avatar: "https://i.pravatar.cc/400?img=15",
+      rank: "#৯",
+    },
+    {
+      name: "রিফাত করিম",
+      college: "আদমজী ক্যান্টনমেন্ট",
+      quote: "টপিক-ভিত্তিক টেস্ট দিয়ে দুর্বলতা ধরা সহজ হয়েছে।",
+      avatar: "https://i.pravatar.cc/400?img=33",
+      rank: "মেধাতালিকায়",
+    },
+    {
+      name: "মেহজাবিন তাবাসসুম",
+      college: "এসএফএক্স গ্রীনহেরাল্ড",
+      quote: "Chorcha AI ২৪ ঘণ্টা পাশে ছিল — কখনো একা লাগেনি।",
+      avatar: "https://i.pravatar.cc/400?img=49",
+      rank: "#২",
+    },
+    {
+      name: "ইশতিয়াক রহমান",
+      college: "ঢাকা সিটি কলেজ",
+      quote: "লাইভ মডেল টেস্ট দিয়ে কনফিডেন্স বেড়ে গেছে।",
+      avatar: "https://i.pravatar.cc/400?img=12",
+      rank: "#১২",
+    },
+    {
+      name: "সুমাইয়া আক্তার",
+      college: "মতিঝিল আইডিয়াল",
+      quote: "এক প্যাকেজে সব — আলাদা কোচিং খুঁজতে হয়নি।",
+      avatar: "https://i.pravatar.cc/400?img=25",
+      rank: "#৬",
+    },
   ],
   faqs: [
     {
@@ -210,9 +271,9 @@ export const hscData = {
   heroHeadlineAccent: "সব এক জায়গায়",
   heroSub: "HSC 28 সায়েন্সের সম্পূর্ণ প্রস্তুতি এখন একটাই প্রিমিয়াম প্যাকেজে",
   heroStats: [
-    { value: "১০ লাখ+", label: "শিক্ষার্থী",     icon: "users",   color: "violet" },
-    { value: "১৩০+",    label: "ভিডিও ক্লাস",   icon: "video",    color: "cyan" },
-    { value: "২৪/৭",    label: "AI সাপোর্ট",    icon: "bot",      color: "pink" },
+    { value: "১০ লাখ+", label: "শিক্ষার্থী", icon: "users", color: "violet" },
+    { value: "১৩০+", label: "ভিডিও ক্লাস", icon: "video", color: "cyan" },
+    { value: "২৪/৭", label: "AI সাপোর্ট", icon: "bot", color: "pink" },
   ],
   ctaPrimary: "প্যাকেজ দেখো",
   ctaSecondary: "আরও জানো",
@@ -269,15 +330,45 @@ export const hscData = {
       svg: "/assets/Physics.svg",
       color: "blue",
       chapterList: [
-        { name: "ভৌত জগৎ ও পরিমাপ",          videos: 8,  duration: "১ঘ ৪২মি", available: true },
-        { name: "ভেক্টর",                         videos: 10, duration: "২ঘ ১০মি", available: true },
-        { name: "গতিবিদ্যা",                      videos: 12, duration: "২ঘ ৫৮মি", available: true },
-        { name: "নিউটনীয় বলবিদ্যা",           videos: 11, duration: "২ঘ ৩৫মি", available: true },
-        { name: "কাজ, শক্তি ও ক্ষমতা",        videos: 9,  duration: "১ঘ ৫৬মি", available: true },
-        { name: "মহাকর্ষ ও অভিকর্ষ",            videos: 7,  duration: "১ঘ ৩০মি", available: false },
-        { name: "পদার্থের গাঠনিক ধর্ম",       videos: 8,  duration: "১ঘ ৪০মি", available: false },
-        { name: "পর্যাবৃত্ত গতি",                  videos: 9,  duration: "১ঘ ৫০মি", available: false },
-        { name: "তরঙ্গ",                            videos: 10, duration: "২ঘ ১৫মি", available: false },
+        {
+          name: "ভৌত জগৎ ও পরিমাপ",
+          videos: 8,
+          duration: "১ঘ ৪২মি",
+          available: true,
+        },
+        { name: "ভেক্টর", videos: 10, duration: "২ঘ ১০মি", available: true },
+        { name: "গতিবিদ্যা", videos: 12, duration: "২ঘ ৫৮মি", available: true },
+        {
+          name: "নিউটনীয় বলবিদ্যা",
+          videos: 11,
+          duration: "২ঘ ৩৫মি",
+          available: true,
+        },
+        {
+          name: "কাজ, শক্তি ও ক্ষমতা",
+          videos: 9,
+          duration: "১ঘ ৫৬মি",
+          available: true,
+        },
+        {
+          name: "মহাকর্ষ ও অভিকর্ষ",
+          videos: 7,
+          duration: "১ঘ ৩০মি",
+          available: false,
+        },
+        {
+          name: "পদার্থের গাঠনিক ধর্ম",
+          videos: 8,
+          duration: "১ঘ ৪০মি",
+          available: false,
+        },
+        {
+          name: "পর্যাবৃত্ত গতি",
+          videos: 9,
+          duration: "১ঘ ৫০মি",
+          available: false,
+        },
+        { name: "তরঙ্গ", videos: 10, duration: "২ঘ ১৫মি", available: false },
       ],
     },
     {
@@ -286,9 +377,19 @@ export const hscData = {
       svg: "/assets/Physics.svg",
       color: "blue",
       chapterList: [
-        { name: "তাপগতিবিদ্যা",                  videos: 11, duration: "২ঘ ২৫মি", available: false },
-        { name: "স্থির তড়িৎ",                     videos: 12, duration: "২ঘ ৫০মি", available: false },
-        { name: "চল তড়িৎ",                       videos: 10, duration: "২ঘ ০৫মি", available: false },
+        {
+          name: "তাপগতিবিদ্যা",
+          videos: 11,
+          duration: "২ঘ ২৫মি",
+          available: false,
+        },
+        {
+          name: "স্থির তড়িৎ",
+          videos: 12,
+          duration: "২ঘ ৫০মি",
+          available: false,
+        },
+        { name: "চল তড়িৎ", videos: 10, duration: "২ঘ ০৫মি", available: false },
       ],
     },
     {
@@ -297,11 +398,36 @@ export const hscData = {
       svg: "/assets/Chemistry.svg",
       color: "green",
       chapterList: [
-        { name: "ল্যাবরেটরির নিরাপদ ব্যবহার",  videos: 6,  duration: "১ঘ ১৫মি", available: true },
-        { name: "গুণগত রসায়ন",                  videos: 10, duration: "২ঘ ১০মি", available: true },
-        { name: "মৌলের পর্যায়বৃত্ত ধর্ম ও রাসায়নিক বন্ধন", videos: 12, duration: "২ঘ ৪০মি", available: true },
-        { name: "রাসায়নিক পরিবর্তন",          videos: 9,  duration: "১ঘ ৫৮মি", available: false },
-        { name: "কর্মমুখী রসায়ন",                videos: 7,  duration: "১ঘ ৩৫মি", available: false },
+        {
+          name: "ল্যাবরেটরির নিরাপদ ব্যবহার",
+          videos: 6,
+          duration: "১ঘ ১৫মি",
+          available: true,
+        },
+        {
+          name: "গুণগত রসায়ন",
+          videos: 10,
+          duration: "২ঘ ১০মি",
+          available: true,
+        },
+        {
+          name: "মৌলের পর্যায়বৃত্ত ধর্ম ও রাসায়নিক বন্ধন",
+          videos: 12,
+          duration: "২ঘ ৪০মি",
+          available: true,
+        },
+        {
+          name: "রাসায়নিক পরিবর্তন",
+          videos: 9,
+          duration: "১ঘ ৫৮মি",
+          available: false,
+        },
+        {
+          name: "কর্মমুখী রসায়ন",
+          videos: 7,
+          duration: "১ঘ ৩৫মি",
+          available: false,
+        },
       ],
     },
     {
@@ -310,8 +436,18 @@ export const hscData = {
       svg: "/assets/Chemistry.svg",
       color: "green",
       chapterList: [
-        { name: "পরিবেশ রসায়ন",                videos: 8,  duration: "১ঘ ৪০মি", available: false },
-        { name: "জৈব রসায়ন",                    videos: 14, duration: "৩ঘ ১৫মি", available: false },
+        {
+          name: "পরিবেশ রসায়ন",
+          videos: 8,
+          duration: "১ঘ ৪০মি",
+          available: false,
+        },
+        {
+          name: "জৈব রসায়ন",
+          videos: 14,
+          duration: "৩ঘ ১৫মি",
+          available: false,
+        },
       ],
     },
     {
@@ -320,10 +456,20 @@ export const hscData = {
       svg: "/assets/Biology.svg",
       color: "emerald",
       chapterList: [
-        { name: "কোষ ও এর গঠন",                  videos: 10, duration: "২ঘ ০৫মি", available: true },
-        { name: "কোষ বিভাজন",                    videos: 8,  duration: "১ঘ ৪০মি", available: true },
-        { name: "অণুজীব",                          videos: 9,  duration: "১ঘ ৫৫মি", available: false },
-        { name: "শৈবাল ও ছত্রাক",                videos: 7,  duration: "১ঘ ২৫মি", available: false },
+        {
+          name: "কোষ ও এর গঠন",
+          videos: 10,
+          duration: "২ঘ ০৫মি",
+          available: true,
+        },
+        { name: "কোষ বিভাজন", videos: 8, duration: "১ঘ ৪০মি", available: true },
+        { name: "অণুজীব", videos: 9, duration: "১ঘ ৫৫মি", available: false },
+        {
+          name: "শৈবাল ও ছত্রাক",
+          videos: 7,
+          duration: "১ঘ ২৫মি",
+          available: false,
+        },
       ],
     },
     {
@@ -332,8 +478,18 @@ export const hscData = {
       svg: "/assets/Biology.svg",
       color: "emerald",
       chapterList: [
-        { name: "প্রাণীর বিভিন্নতা ও শ্রেণিবিন্যাস", videos: 9, duration: "১ঘ ৫০মি", available: false },
-        { name: "প্রাণীর পরিচিতি",              videos: 11, duration: "২ঘ ২০মি", available: false },
+        {
+          name: "প্রাণীর বিভিন্নতা ও শ্রেণিবিন্যাস",
+          videos: 9,
+          duration: "১ঘ ৫০মি",
+          available: false,
+        },
+        {
+          name: "প্রাণীর পরিচিতি",
+          videos: 11,
+          duration: "২ঘ ২০মি",
+          available: false,
+        },
       ],
     },
     {
@@ -342,10 +498,15 @@ export const hscData = {
       svg: "/assets/Higher_math.svg",
       color: "purple",
       chapterList: [
-        { name: "ম্যাট্রিক্স ও নির্ণায়ক",       videos: 11, duration: "২ঘ ৩০মি", available: true },
-        { name: "ভেক্টর",                            videos: 9,  duration: "২ঘ ০০মি", available: true },
-        { name: "সরলরেখা",                          videos: 8,  duration: "১ঘ ৪৫মি", available: false },
-        { name: "বৃত্ত",                              videos: 7,  duration: "১ঘ ৩০মি", available: false },
+        {
+          name: "ম্যাট্রিক্স ও নির্ণায়ক",
+          videos: 11,
+          duration: "২ঘ ৩০মি",
+          available: true,
+        },
+        { name: "ভেক্টর", videos: 9, duration: "২ঘ ০০মি", available: true },
+        { name: "সরলরেখা", videos: 8, duration: "১ঘ ৪৫মি", available: false },
+        { name: "বৃত্ত", videos: 7, duration: "১ঘ ৩০মি", available: false },
       ],
     },
     {
@@ -354,8 +515,18 @@ export const hscData = {
       svg: "/assets/Higher_math.svg",
       color: "purple",
       chapterList: [
-        { name: "বাস্তব সংখ্যা ও অসমতা",      videos: 6,  duration: "১ঘ ২০মি", available: false },
-        { name: "যোগাশ্রয়ী প্রোগ্রাম",         videos: 5,  duration: "১ঘ ১০মি", available: false },
+        {
+          name: "বাস্তব সংখ্যা ও অসমতা",
+          videos: 6,
+          duration: "১ঘ ২০মি",
+          available: false,
+        },
+        {
+          name: "যোগাশ্রয়ী প্রোগ্রাম",
+          videos: 5,
+          duration: "১ঘ ১০মি",
+          available: false,
+        },
       ],
     },
     {
@@ -364,10 +535,20 @@ export const hscData = {
       svg: "/assets/Bangla.svg",
       color: "pink",
       chapterList: [
-        { name: "গদ্য সমগ্র",                       videos: 18, duration: "৪ঘ ১০মি", available: true },
-        { name: "পদ্য সমগ্র",                       videos: 16, duration: "৩ঘ ৪৫মি", available: true },
-        { name: "উপন্যাস",                          videos: 8,  duration: "১ঘ ৫০মি", available: false },
-        { name: "নাটক",                              videos: 6,  duration: "১ঘ ৩০মি", available: false },
+        {
+          name: "গদ্য সমগ্র",
+          videos: 18,
+          duration: "৪ঘ ১০মি",
+          available: true,
+        },
+        {
+          name: "পদ্য সমগ্র",
+          videos: 16,
+          duration: "৩ঘ ৪৫মি",
+          available: true,
+        },
+        { name: "উপন্যাস", videos: 8, duration: "১ঘ ৫০মি", available: false },
+        { name: "নাটক", videos: 6, duration: "১ঘ ৩০মি", available: false },
       ],
     },
     {
@@ -376,8 +557,8 @@ export const hscData = {
       svg: "/assets/Bangla.svg",
       color: "pink",
       chapterList: [
-        { name: "ব্যাকরণ",                           videos: 12, duration: "২ঘ ৩০মি", available: true },
-        { name: "নির্মিতি",                          videos: 9,  duration: "১ঘ ৫০মি", available: false },
+        { name: "ব্যাকরণ", videos: 12, duration: "২ঘ ৩০মি", available: true },
+        { name: "নির্মিতি", videos: 9, duration: "১ঘ ৫০মি", available: false },
       ],
     },
     {
@@ -386,9 +567,24 @@ export const hscData = {
       svg: "/assets/English.svg",
       color: "amber",
       chapterList: [
-        { name: "Seen Comprehension",            videos: 14, duration: "৩ঘ ০০মি", available: true },
-        { name: "Unseen Comprehension",          videos: 10, duration: "২ঘ ১৫মি", available: true },
-        { name: "Writing Part",                   videos: 8,  duration: "১ঘ ৪৫মি", available: false },
+        {
+          name: "Seen Comprehension",
+          videos: 14,
+          duration: "৩ঘ ০০মি",
+          available: true,
+        },
+        {
+          name: "Unseen Comprehension",
+          videos: 10,
+          duration: "২ঘ ১৫মি",
+          available: true,
+        },
+        {
+          name: "Writing Part",
+          videos: 8,
+          duration: "১ঘ ৪৫মি",
+          available: false,
+        },
       ],
     },
     {
@@ -397,8 +593,13 @@ export const hscData = {
       svg: "/assets/English.svg",
       color: "amber",
       chapterList: [
-        { name: "Grammar",                         videos: 16, duration: "৩ঘ ৩০মি", available: true },
-        { name: "Composition",                     videos: 9,  duration: "১ঘ ৫০মি", available: false },
+        { name: "Grammar", videos: 16, duration: "৩ঘ ৩০মি", available: true },
+        {
+          name: "Composition",
+          videos: 9,
+          duration: "১ঘ ৫০মি",
+          available: false,
+        },
       ],
     },
     {
@@ -407,9 +608,24 @@ export const hscData = {
       svg: "/assets/Bangla.svg",
       color: "cyan",
       chapterList: [
-        { name: "তথ্য ও যোগাযোগ প্রযুক্তি",  videos: 7,  duration: "১ঘ ৩০মি", available: true },
-        { name: "কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং", videos: 8, duration: "১ঘ ৪৫মি", available: false },
-        { name: "সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস", videos: 9, duration: "২ঘ ০০মি", available: false },
+        {
+          name: "তথ্য ও যোগাযোগ প্রযুক্তি",
+          videos: 7,
+          duration: "১ঘ ৩০মি",
+          available: true,
+        },
+        {
+          name: "কমিউনিকেশন সিস্টেম ও নেটওয়ার্কিং",
+          videos: 8,
+          duration: "১ঘ ৪৫মি",
+          available: false,
+        },
+        {
+          name: "সংখ্যা পদ্ধতি ও ডিজিটাল ডিভাইস",
+          videos: 9,
+          duration: "২ঘ ০০মি",
+          available: false,
+        },
       ],
     },
   ],
@@ -454,7 +670,8 @@ export const hscData = {
       experience: "৮ বছর",
       students: "১২,৪০০+",
       rating: "৪.৯",
-      avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&h=625&fit=crop&crop=faces&q=80",
     },
     {
       name: "তাসনিম আক্তার",
@@ -464,7 +681,8 @@ export const hscData = {
       experience: "৬ বছর",
       students: "৯,৮০০+",
       rating: "৪.৮",
-      avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&h=625&fit=crop&crop=faces&q=80",
     },
     {
       name: "ডা. ইমতিয়াজ আহমেদ",
@@ -474,7 +692,8 @@ export const hscData = {
       experience: "৭ বছর",
       students: "৮,২০০+",
       rating: "৪.৯",
-      avatar: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=500&h=625&fit=crop&crop=faces&q=80",
     },
     {
       name: "মাহমুদ হোসেন",
@@ -484,7 +703,8 @@ export const hscData = {
       experience: "৯ বছর",
       students: "১১,১০০+",
       rating: "৪.৭",
-      avatar: "https://images.unsplash.com/photo-1582015752624-e8b1c75e3711?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1582015752624-e8b1c75e3711?w=500&h=625&fit=crop&crop=faces&q=80",
     },
     {
       name: "নাফিসা রহমান",
@@ -494,7 +714,8 @@ export const hscData = {
       experience: "৫ বছর",
       students: "৭,৩০০+",
       rating: "৪.৮",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&h=625&fit=crop&crop=faces&q=80",
     },
     {
       name: "সাকিব আল হাসান",
@@ -504,7 +725,8 @@ export const hscData = {
       experience: "৭ বছর",
       students: "৬,৯০০+",
       rating: "৪.৯",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=625&fit=crop&crop=faces&q=80",
     },
     {
       name: "মারিয়াম বেগম",
@@ -514,7 +736,8 @@ export const hscData = {
       experience: "১০ বছর",
       students: "৮,৫০০+",
       rating: "৪.৭",
-      avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&h=625&fit=crop&crop=faces&q=80",
     },
     {
       name: "তৌফিক এলাহী",
@@ -524,19 +747,74 @@ export const hscData = {
       experience: "৬ বছর",
       students: "৫,৬০০+",
       rating: "৪.৮",
-      avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar:
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&h=625&fit=crop&crop=faces&q=80",
     },
   ],
   toppers: [
-    { name: "রিফাত হোসেন",    college: "বুয়েট",            quote: "প্রতিটি টপিক এত ক্লিয়ার হয়েছে।",                       avatar: "https://i.pravatar.cc/400?img=71", rank: "GPA ৫.০০" },
-    { name: "সাবরিনা নূর",    college: "ঢাকা মেডিকেল",      quote: "AI ডাউট সলভার রাত ২টায়ও পাশে ছিল।",                   avatar: "https://i.pravatar.cc/400?img=45", rank: "GPA ৫.০০" },
-    { name: "নাফিস আহমেদ",    college: "CUET",              quote: "লিডারবোর্ড প্রতিদিন পড়তে বাধ্য করেছে।",                avatar: "https://i.pravatar.cc/400?img=68", rank: "GPA ৪.৯২" },
-    { name: "তাসনিম জাহান",   college: "ঢাকা বিশ্ববিদ্যালয়", quote: "Chorcha-র টেস্ট পেপার সবচেয়ে ভালো।",                  avatar: "https://i.pravatar.cc/400?img=48", rank: "GPA ৫.০০" },
-    { name: "ইমরান হাসান",    college: "BUET",              quote: "ফিজিক্স কনসেপ্ট আগের চেয়ে অনেক ক্লিয়ার এখন।",         avatar: "https://i.pravatar.cc/400?img=14", rank: "GPA ৫.০০" },
-    { name: "ফাহমিদা ইসলাম",  college: "RMC",               quote: "এক প্যাকেজে সব — অনেক টাকা সেভ হয়েছে।",                  avatar: "https://i.pravatar.cc/400?img=32", rank: "GPA ৪.৯৬" },
-    { name: "সাদমান রহমান",   college: "KUET",              quote: "প্রশ্নব্যাংক এত গুছানো — রিভাইজ সহজ।",                  avatar: "https://i.pravatar.cc/400?img=8",  rank: "GPA ৫.০০" },
-    { name: "মুনিরা চৌধুরী",  college: "SSMC",              quote: "লাইভ ক্লাস মিস হলেও রেকর্ডেড পাওয়া যায়।",                avatar: "https://i.pravatar.cc/400?img=29", rank: "GPA ৪.৮৮" },
-    { name: "তাহসিন আলম",     college: "NSU",               quote: "আগে অনেক কোচিং বদলেছি — এটাই সেরা।",                     avatar: "https://i.pravatar.cc/400?img=53", rank: "GPA ৪.৯৫" },
+    {
+      name: "রিফাত হোসেন",
+      college: "বুয়েট",
+      quote: "প্রতিটি টপিক এত ক্লিয়ার হয়েছে।",
+      avatar: "https://i.pravatar.cc/400?img=71",
+      rank: "GPA ৫.০০",
+    },
+    {
+      name: "সাবরিনা নূর",
+      college: "ঢাকা মেডিকেল",
+      quote: "AI ডাউট সলভার রাত ২টায়ও পাশে ছিল।",
+      avatar: "https://i.pravatar.cc/400?img=45",
+      rank: "GPA ৫.০০",
+    },
+    {
+      name: "নাফিস আহমেদ",
+      college: "CUET",
+      quote: "লিডারবোর্ড প্রতিদিন পড়তে বাধ্য করেছে।",
+      avatar: "https://i.pravatar.cc/400?img=68",
+      rank: "GPA ৪.৯২",
+    },
+    {
+      name: "তাসনিম জাহান",
+      college: "ঢাকা বিশ্ববিদ্যালয়",
+      quote: "Chorcha-র টেস্ট পেপার সবচেয়ে ভালো।",
+      avatar: "https://i.pravatar.cc/400?img=48",
+      rank: "GPA ৫.০০",
+    },
+    {
+      name: "ইমরান হাসান",
+      college: "BUET",
+      quote: "ফিজিক্স কনসেপ্ট আগের চেয়ে অনেক ক্লিয়ার এখন।",
+      avatar: "https://i.pravatar.cc/400?img=14",
+      rank: "GPA ৫.০০",
+    },
+    {
+      name: "ফাহমিদা ইসলাম",
+      college: "RMC",
+      quote: "এক প্যাকেজে সব — অনেক টাকা সেভ হয়েছে।",
+      avatar: "https://i.pravatar.cc/400?img=32",
+      rank: "GPA ৪.৯৬",
+    },
+    {
+      name: "সাদমান রহমান",
+      college: "KUET",
+      quote: "প্রশ্নব্যাংক এত গুছানো — রিভাইজ সহজ।",
+      avatar: "https://i.pravatar.cc/400?img=8",
+      rank: "GPA ৫.০০",
+    },
+    {
+      name: "মুনিরা চৌধুরী",
+      college: "SSMC",
+      quote: "লাইভ ক্লাস মিস হলেও রেকর্ডেড পাওয়া যায়।",
+      avatar: "https://i.pravatar.cc/400?img=29",
+      rank: "GPA ৪.৮৮",
+    },
+    {
+      name: "তাহসিন আলম",
+      college: "NSU",
+      quote: "আগে অনেক কোচিং বদলেছি — এটাই সেরা।",
+      avatar: "https://i.pravatar.cc/400?img=53",
+      rank: "GPA ৪.৯৫",
+    },
   ],
   faqs: [
     {

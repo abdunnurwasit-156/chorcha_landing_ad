@@ -28,7 +28,7 @@ export default function HowItWorks({ data }) {
 
         <div className="relative">
           {/* Connector line */}
-          <div className="hidden md:block absolute top-10 left-[16.67%] right-[16.67%] h-0.5 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="hidden md:block absolute top-[40px] left-[22%] right-[22%] h-px -z-10 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
             {data.steps.map((step, i) => {
