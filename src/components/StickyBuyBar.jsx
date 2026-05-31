@@ -84,7 +84,7 @@ export default function StickyBuyBar({ data }) {
           transition={{ type: 'spring', bounce: 0.18, duration: 0.5 }}
           className="fixed bottom-3 inset-x-3 z-50 max-w-2xl mx-auto"
         >
-          <div className="dark-surface rounded-2xl border border-white/10 bg-[#0B0F0D]/95 backdrop-blur-xl shadow-2xl shadow-black/60 p-2 sm:p-3">
+          <div className="dark-surface rounded-2xl border border-white/10 bg-[#0B0F0D]/95 backdrop-blur-xl shadow-2xl shadow-black/60 p-2 sm:p-2">
 
             {/* ───── Campaign row ─────
                 Mobile: ultra-compact single line (discount · timer).
@@ -111,7 +111,7 @@ export default function StickyBuyBar({ data }) {
                 </div>
 
                 {/* Desktop roomier row */}
-                <div className="hidden sm:flex items-center justify-between gap-3 px-1 pb-2.5 mb-2.5 border-b border-white/8">
+                <div className="hidden sm:flex items-center justify-between gap-3 px-1 pb-1.5 mb-1.5 border-b border-white/8">
                   <div className="flex items-center gap-2 min-w-0">
                     <span className="flex-shrink-0 w-6 h-6 rounded-lg flex items-center justify-center bg-amber-400/20 border border-amber-300/40">
                       <Sparkles size={11} className="text-amber-300" />
@@ -141,12 +141,12 @@ export default function StickyBuyBar({ data }) {
             )}
 
             {/* Month selector — tighter padding on mobile */}
-            <div className="flex gap-1 sm:gap-1.5 mb-2 sm:mb-2.5 p-0.5 sm:p-1 rounded-xl bg-white/[0.04] border border-white/8">
+            <div className="flex gap-1 sm:gap-1.5 mb-2 sm:mb-1.5 p-0.5 sm:p-1 rounded-xl bg-white/[0.04] border border-white/8">
               {PLANS.map((p, i) => (
                 <button
                   key={p.m}
                   onClick={() => setSelected(i)}
-                  className={`flex-1 py-2.5 sm:py-3 rounded-lg text-[10px] sm:text-xs font-bold transition-all relative ${
+                  className={`flex-1 py-2.5 sm:py-2 rounded-lg text-[10px] sm:text-xs font-bold transition-all relative ${
                     selected === i ? 'text-white' : 'text-white/40'
                   }`}
                 >
@@ -165,7 +165,7 @@ export default function StickyBuyBar({ data }) {
             {/* Price + CTA */}
             <div className="flex items-center justify-between gap-2 sm:gap-3 px-1">
               <div className="flex items-baseline gap-1.5 sm:gap-2 min-w-0">
-                <span className="text-xl sm:text-3xl font-black text-white leading-none">৳{plan.price}</span>
+                <span className="text-xl sm:text-2xl font-black text-white leading-none">৳{plan.price}</span>
                 {plan.original && (
                   <span className="text-xs sm:text-sm text-white/35 line-through">৳{plan.original}</span>
                 )}
@@ -179,7 +179,7 @@ export default function StickyBuyBar({ data }) {
               <motion.button
                 whileTap={{ scale: 0.97 }}
                 onClick={goToPricing}
-                className="flex items-center gap-1 sm:gap-1.5 px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold text-white whitespace-nowrap flex-shrink-0"
+                className="flex items-center gap-1 sm:gap-1.5 px-4 sm:px-5 py-2 sm:py-2 rounded-lg text-xs sm:text-sm font-bold text-white whitespace-nowrap flex-shrink-0"
                 style={{ background: premiumGradient, boxShadow: 'inset 0 -3px 0 0 rgba(30,20,75,0.55)' }}
               >
                 কিনুন <ArrowRight size={14} />
