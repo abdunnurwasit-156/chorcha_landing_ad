@@ -9,6 +9,7 @@ import Toppers from '../components/Toppers'
 import ComparisonTable from '../components/ComparisonTable'
 import CTABanner from '../components/CTABanner'
 import CampaignBanner from '../components/CampaignBanner'
+import StickyCampaignBar from '../components/StickyCampaignBar'
 import FAQ from '../components/FAQ'
 import Footer from '../components/Footer'
 import { admissionData, PAGES } from '../data/content'
@@ -29,6 +30,7 @@ export default function AdmissionPage({ activePage, onSwitch }) {
       <CTABanner data={admissionData} />
       <FAQ data={admissionData} />
       <Footer page={PAGES.ADMISSION} />
+      <StickyCampaignBar data={admissionData} />
     </div>
   )
 }

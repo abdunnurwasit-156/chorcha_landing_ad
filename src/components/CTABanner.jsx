@@ -44,7 +44,7 @@ export default function CTABanner({ data }) {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -80px 0px" }}
-          className={`relative rounded-[28px] overflow-hidden px-6 py-12 sm:p-14 text-center border border-white/15 ${palette.ring}`}
+          className={`dark-surface relative rounded-[28px] overflow-hidden px-6 py-12 sm:p-14 text-center border border-white/15 ${palette.ring}`}
           style={{ background: palette.bg }}
         >
           {/* Texture: dotted grid + saturated color glows */}

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Check } from 'lucide-react'
 import { PAGES } from '../data/content'
+import ThemeToggle from './ThemeToggle'
 
 const PAGE_OPTIONS = [
   { id: PAGES.ADMISSION, label: 'কলেজ অ্যাডমিশন ২৬', sub: 'Admission 26' },
@@ -36,7 +37,8 @@ export default function Navbar({ page, activePage, onSwitch }) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <img src="/assets/logo-dark.png" alt="Chorcha" className="h-7 sm:h-8 w-auto" />
+          <img src="/assets/logo-dark.png" alt="Chorcha" className="dark-logo h-7 sm:h-8 w-auto" />
+          <img src="/assets/logo.png" alt="Chorcha" className="light-logo h-7 sm:h-8 w-auto" />
         </div>
 
         <div className="hidden md:flex items-center gap-6">
@@ -47,7 +49,8 @@ export default function Navbar({ page, activePage, onSwitch }) {
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="মেনু"

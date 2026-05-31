@@ -15,7 +15,7 @@ export const admissionData = {
   accentColor: "purple",
   // ── Campaign banner (set enabled:false to hide). endsAt = ISO date string. ──
   campaign: {
-    enabled: true,
+    enabled: false,
     eyebrow: "লিমিটেড টাইম অফার",
     headline: "অ্যাডমিশন কিকঅফ অফার",
     sub: "নতুন ব্যাচ শুরু — পুরো প্যাকেজে বিশেষ ছাড়।",

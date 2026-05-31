@@ -30,12 +30,12 @@ export default function HSCPage({ activePage, onSwitch }) {
       <HowItWorks data={hscData} />
       <Instructors data={hscData} />
       <Toppers data={hscData} />
-      <AppShowcase data={hscData} />
       <ComparisonTable data={hscData} />
       <Pricing data={hscData} />
+      <AppShowcase data={hscData} />
       <FAQ data={hscData} />
       <Footer page={PAGES.HSC} />
-      <StickyBuyBar />
+      <StickyBuyBar data={hscData} />
     </div>
   )
 }

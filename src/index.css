@@ -3,6 +3,8 @@
 @layer base {
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; overflow-x: hidden; }
+  html[data-theme="light"] { color-scheme: light; }
+  html:not([data-theme="light"]) { color-scheme: dark; }
   body {
     background: #060C09;
     color: #E8F0EB;
@@ -10,6 +12,7 @@
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     max-width: 100vw;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   .font-inter { font-family: 'Google Sans', system-ui, sans-serif; }
   #root { width: 100%; min-height: 100vh; overflow-x: hidden; }
@@ -195,3 +198,403 @@
   -webkit-mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
           mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
 }
+
+/* =================================================================
+   ☀ LIGHT THEME
+   Activated via <html data-theme="light">. Inverts the dark surface
+   palette while keeping brand greens, accent colors, and gradients
+   intact (they're already legible on light backgrounds).
+   ================================================================= */
+html[data-theme="light"] body {
+  background: #FFFFFF;        /* pure white */
+  color: #1B201D;
+}
+html[data-theme="light"] ::selection {
+  background: rgba(1,122,71,0.18);
+  color: #062314;
+}
+
+/* ── Body / hero / footer dark backgrounds → pure white ── */
+html[data-theme="light"] .bg-\[\#060C09\] { background-color: #FFFFFF !important; }
+html[data-theme="light"] .bg-\[\#0B0F0D\] { background-color: #FFFFFF !important; }
+html[data-theme="light"] .bg-\[\#060C09\]\/85,
+html[data-theme="light"] .bg-\[\#060C09\]\/90,
+html[data-theme="light"] .bg-\[\#060C09\]\/95,
+html[data-theme="light"] .bg-\[\#060C09\]\/97 { background-color: rgba(255,255,255,0.92) !important; }
+html[data-theme="light"] .bg-\[\#0B0F0D\]\/80,
+html[data-theme="light"] .bg-\[\#0B0F0D\]\/85,
+html[data-theme="light"] .bg-\[\#0B0F0D\]\/95,
+html[data-theme="light"] .bg-\[\#0B0F0D\]\/97 { background-color: rgba(255,255,255,0.92) !important; }
+
+/* Section gradient overlays used in hero, etc. — fade to white but lighter
+   so portrait images aren't washed out at the bottom edge */
+html[data-theme="light"] section .bg-gradient-to-t.from-\[\#060C09\] {
+  background: linear-gradient(to top, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.20) 35%, transparent 70%) !important;
+}
+
+/* ── Card surfaces (glass) → solid white with subtle shadow ── */
+html[data-theme="light"] .card-glass {
+  background: #FFFFFF !important;
+  border-color: rgba(0,0,0,0.07) !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03), 0 6px 18px -8px rgba(0,0,0,0.06);
+}
+html[data-theme="light"] .card-glass-green {
+  background: rgba(1,122,71,0.06) !important;
+  border-color: rgba(1,122,71,0.20) !important;
+}
+
+/* ── White-tinted backgrounds (utility) → black-tinted ── */
+html[data-theme="light"] .bg-white\/\[0\.02\],
+html[data-theme="light"] .bg-white\/\[0\.03\],
+html[data-theme="light"] .bg-white\/\[0\.04\],
+html[data-theme="light"] .bg-white\/\[0\.06\] { background-color: rgba(0,0,0,0.025) !important; }
+html[data-theme="light"] .bg-white\/5,
+html[data-theme="light"] .bg-white\/8 { background-color: rgba(0,0,0,0.04) !important; }
+html[data-theme="light"] .bg-white\/10,
+html[data-theme="light"] .bg-white\/12 { background-color: rgba(0,0,0,0.06) !important; }
+html[data-theme="light"] .bg-white\/15,
+html[data-theme="light"] .bg-white\/20 { background-color: rgba(0,0,0,0.08) !important; }
+html[data-theme="light"] .hover\:bg-white\/\[0\.04\]:hover,
+html[data-theme="light"] .hover\:bg-white\/\[0\.06\]:hover { background-color: rgba(0,0,0,0.04) !important; }
+html[data-theme="light"] .hover\:bg-white\/20:hover { background-color: rgba(0,0,0,0.08) !important; }
+
+/* ── White borders → dark borders ── */
+html[data-theme="light"] .border-white\/5,
+html[data-theme="light"] .border-white\/\[0\.05\],
+html[data-theme="light"] .border-white\/8 { border-color: rgba(0,0,0,0.06) !important; }
+html[data-theme="light"] .border-white\/10,
+html[data-theme="light"] .border-white\/12,
+html[data-theme="light"] .border-white\/15 { border-color: rgba(0,0,0,0.10) !important; }
+html[data-theme="light"] .border-white\/20,
+html[data-theme="light"] .border-white\/25,
+html[data-theme="light"] .border-white\/30 { border-color: rgba(0,0,0,0.14) !important; }
+html[data-theme="light"] .hover\:border-white\/20:hover,
+html[data-theme="light"] .hover\:border-white\/25:hover,
+html[data-theme="light"] .hover\:border-white\/30:hover { border-color: rgba(0,0,0,0.16) !important; }
+
+/* ── White text → dark ink (preserve opacity hierarchy) ── */
+html[data-theme="light"] .text-white { color: #1B201D !important; }
+html[data-theme="light"] .text-white\/90 { color: rgba(27,32,29,0.92) !important; }
+html[data-theme="light"] .text-white\/85 { color: rgba(27,32,29,0.88) !important; }
+html[data-theme="light"] .text-white\/80 { color: rgba(27,32,29,0.85) !important; }
+html[data-theme="light"] .text-white\/75 { color: rgba(27,32,29,0.78) !important; }
+html[data-theme="light"] .text-white\/70 { color: rgba(27,32,29,0.72) !important; }
+html[data-theme="light"] .text-white\/65 { color: rgba(27,32,29,0.68) !important; }
+html[data-theme="light"] .text-white\/60 { color: rgba(27,32,29,0.62) !important; }
+html[data-theme="light"] .text-white\/55 { color: rgba(27,32,29,0.58) !important; }
+html[data-theme="light"] .text-white\/50 { color: rgba(27,32,29,0.55) !important; }
+html[data-theme="light"] .text-white\/45 { color: rgba(27,32,29,0.50) !important; }
+html[data-theme="light"] .text-white\/40 { color: rgba(27,32,29,0.48) !important; }
+html[data-theme="light"] .text-white\/35 { color: rgba(27,32,29,0.45) !important; }
+html[data-theme="light"] .text-white\/30 { color: rgba(27,32,29,0.42) !important; }
+html[data-theme="light"] .text-white\/25 { color: rgba(27,32,29,0.40) !important; }
+html[data-theme="light"] .text-white\/20 { color: rgba(27,32,29,0.36) !important; }
+html[data-theme="light"] .text-white\/15 { color: rgba(27,32,29,0.32) !important; }
+html[data-theme="light"] .hover\:text-white:hover { color: #0B100D !important; }
+
+/* Black text (used on amber buttons etc.) stays black — no change needed */
+
+/* ── Backdrop blur surfaces — keep blur but use light tint ── */
+html[data-theme="light"] .backdrop-blur,
+html[data-theme="light"] .backdrop-blur-md,
+html[data-theme="light"] .backdrop-blur-xl,
+html[data-theme="light"] .backdrop-blur-sm {
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+}
+
+/* ── Big blob fields on light bg: heavily damp them so cards stay readable.
+   Multiply alpha by ~0.18 — they'll barely tint the cream paper bg. ── */
+html[data-theme="light"] section .blur-\[90px\],
+html[data-theme="light"] section .blur-\[100px\],
+html[data-theme="light"] section .blur-\[110px\],
+html[data-theme="light"] section .blur-\[120px\],
+html[data-theme="light"] section .blur-\[130px\],
+html[data-theme="light"] section .blur-\[140px\],
+html[data-theme="light"] section .blur-\[160px\],
+html[data-theme="light"] section .blur-\[180px\] {
+  opacity: 0.18 !important;
+  mix-blend-mode: multiply;
+}
+
+/* ── Grid / pattern textures on light bg ──
+   Dark mode uses near-white lines at 0.5 alpha + wrapper opacity ~0.03 → final ~0.015.
+   For comparable visibility on a WHITE bg, near-black lines need much higher base alpha
+   because the wrapper opacity (sometimes 0.03–0.05) will multiply them down. ── */
+html[data-theme="light"] .grid-overlay {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.85) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.85) 1px, transparent 1px) !important;
+}
+/* When .grid-overlay sits inside an .opacity-[0.03] wrapper (Hero uses this
+   pattern), gently boost the wrapper opacity so the lines just read on white. */
+html[data-theme="light"] .opacity-\[0\.03\].grid-overlay,
+html[data-theme="light"] .grid-overlay.opacity-\[0\.03\] { opacity: 0.07 !important; }
+html[data-theme="light"] .opacity-\[0\.04\].grid-overlay,
+html[data-theme="light"] .grid-overlay.opacity-\[0\.04\] { opacity: 0.08 !important; }
+html[data-theme="light"] .opacity-\[0\.05\].grid-overlay,
+html[data-theme="light"] .grid-overlay.opacity-\[0\.05\] { opacity: 0.09 !important; }
+html[data-theme="light"] .opacity-\[0\.06\].grid-overlay,
+html[data-theme="light"] .grid-overlay.opacity-\[0\.06\] { opacity: 0.10 !important; }
+html[data-theme="light"] .lines-pattern {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0,0,0,0.045) 0px,
+    rgba(0,0,0,0.045) 1px,
+    transparent 1px,
+    transparent 14px) !important;
+}
+html[data-theme="light"] .dotgrid {
+  background-image: radial-gradient(rgba(0,0,0,0.18) 1px, transparent 1px) !important;
+}
+
+/* Subtle base texture on the whole body so the white page doesn't feel sterile.
+   Very faint dot grid — like quality printed paper. */
+html[data-theme="light"] body {
+  background-image:
+    radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+    radial-gradient(rgba(1,122,71,0.025) 1px, transparent 1px);
+  background-size: 28px 28px, 56px 56px;
+  background-position: 0 0, 14px 14px;
+}
+
+/* ── Marquee bottom-fade should fade to the page bg (cream), not black ── */
+html[data-theme="light"] .marquee-fade-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
+          mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
+}
+
+/* ── Navbar specific: keep contrast for sticky scrolled state ── */
+html[data-theme="light"] nav.fixed { color: #1B201D; }
+
+/* ── Translucent dark surfaces (sticky buy bar, etc.) → solid white ── */
+html[data-theme="light"] [class*="bg-\[\#0B0F0D\]"] { background-color: #FFFFFF !important; }
+
+/* ── Gradient text classes work on light bg, just darken the lightest stops slightly.
+   Use background-image (not shorthand) so background-clip:text is preserved. ── */
+html[data-theme="light"] .text-gradient-premium {
+  background-image: linear-gradient(135deg, #0098a5 0%, #7c3aed 60%, #c026d3 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+html[data-theme="light"] .text-gradient-cool {
+  background-image: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #db2777 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+html[data-theme="light"] .text-gradient,
+html[data-theme="light"] .text-gradient-warm,
+html[data-theme="light"] .text-gradient-amber {
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* ── Pale accent text colors (200/300 shades) need more punch on white ── */
+html[data-theme="light"] .text-violet-200,
+html[data-theme="light"] .text-violet-300 { color: #6d28d9 !important; }
+html[data-theme="light"] .text-cyan-200,
+html[data-theme="light"] .text-cyan-300 { color: #0e7490 !important; }
+html[data-theme="light"] .text-pink-200,
+html[data-theme="light"] .text-pink-300 { color: #be185d !important; }
+html[data-theme="light"] .text-amber-200,
+html[data-theme="light"] .text-amber-300 { color: #b45309 !important; }
+html[data-theme="light"] .text-emerald-300 { color: #047857 !important; }
+html[data-theme="light"] .text-sky-300 { color: #0369a1 !important; }
+html[data-theme="light"] .text-rose-200 { color: #be123c !important; }
+html[data-theme="light"] .text-sky-200 { color: #0369a1 !important; }
+
+/* ── Card chip backgrounds (color/15, /20 variants) get a touch more body on white ── */
+html[data-theme="light"] .bg-violet-500\/12,
+html[data-theme="light"] .bg-violet-500\/15,
+html[data-theme="light"] .bg-violet-500\/20 { background-color: rgba(124,58,237,0.10) !important; }
+html[data-theme="light"] .bg-cyan-500\/12,
+html[data-theme="light"] .bg-cyan-500\/15,
+html[data-theme="light"] .bg-cyan-500\/20 { background-color: rgba(14,116,144,0.10) !important; }
+html[data-theme="light"] .bg-pink-500\/12,
+html[data-theme="light"] .bg-pink-500\/15,
+html[data-theme="light"] .bg-pink-500\/20 { background-color: rgba(190,24,93,0.10) !important; }
+html[data-theme="light"] .bg-amber-500\/12,
+html[data-theme="light"] .bg-amber-500\/15,
+html[data-theme="light"] .bg-amber-500\/20 { background-color: rgba(180,83,9,0.10) !important; }
+html[data-theme="light"] .bg-emerald-500\/12,
+html[data-theme="light"] .bg-emerald-500\/15 { background-color: rgba(4,120,87,0.10) !important; }
+html[data-theme="light"] .bg-sky-500\/12 { background-color: rgba(3,105,161,0.10) !important; }
+
+/* ── Logo swap (dark logo = white text, light logo = dark text) ── */
+.light-logo { display: none; }
+html[data-theme="light"] .dark-logo { display: none; }
+html[data-theme="light"] .light-logo { display: block; }
+
+/* ────────────────────────────────────────────────────────────────────
+   ⚠ WHITE-TEXT SAFELIST (light mode)
+   The blanket .text-white → dark mapping above is great for body text
+   but breaks anywhere white text was the *correct* color regardless of
+   theme: solid colored buttons, dark badges, image overlays, etc.
+   This block re-asserts white text inside those known dark surfaces.
+   ──────────────────────────────────────────────────────────────────── */
+
+/* === Solid green CTA buttons (always green bg → white text) === */
+html[data-theme="light"] [class*="bg-[#017A47]"],
+html[data-theme="light"] [class*="bg-[#018E55]"],
+html[data-theme="light"] [class*="bg-[#016A3E]"] {
+  color: white !important;
+}
+html[data-theme="light"] [class*="bg-[#017A47]"] .text-white,
+html[data-theme="light"] [class*="bg-[#018E55]"] .text-white,
+html[data-theme="light"] [class*="bg-[#016A3E]"] .text-white {
+  color: white !important;
+}
+
+/* === Dark badge / chip / overlay surfaces — they stay dark, keep white text.
+   In light mode bump the bg opacity so badges read crisp against bright photos. === */
+html[data-theme="light"] .bg-black\/55 { background-color: rgba(0,0,0,0.78) !important; }
+html[data-theme="light"] .bg-black\/40 { background-color: rgba(0,0,0,0.65) !important; }
+html[data-theme="light"] .bg-black\/60 { background-color: rgba(0,0,0,0.80) !important; }
+html[data-theme="light"] [class*="bg-black/"] .text-white,
+html[data-theme="light"] [class*="bg-black/"] .text-white\/90,
+html[data-theme="light"] [class*="bg-black/"] .text-white\/85,
+html[data-theme="light"] [class*="bg-black/"] .text-white\/80,
+html[data-theme="light"] [class*="bg-black/"] .text-white\/75,
+html[data-theme="light"] [class*="bg-black/"] .text-white\/70,
+html[data-theme="light"] [class*="bg-black/"] .text-white\/60,
+html[data-theme="light"] [class*="bg-black/"] .text-white\/55,
+html[data-theme="light"] [class*="bg-black/"] .text-white\/50 {
+  color: rgba(255,255,255,0.92) !important;
+}
+
+/* Bright accent text inside dark badges must stay bright (otherwise it
+   becomes the 600-shade we mapped earlier, which is unreadable on dark bg) */
+html[data-theme="light"] [class*="bg-black/"] .text-violet-200,
+html[data-theme="light"] [class*="bg-black/"] .text-violet-300 { color: #c4b5fd !important; }
+html[data-theme="light"] [class*="bg-black/"] .text-cyan-200,
+html[data-theme="light"] [class*="bg-black/"] .text-cyan-300 { color: #67e8f9 !important; }
+html[data-theme="light"] [class*="bg-black/"] .text-pink-200,
+html[data-theme="light"] [class*="bg-black/"] .text-pink-300 { color: #f9a8d4 !important; }
+html[data-theme="light"] [class*="bg-black/"] .text-amber-200,
+html[data-theme="light"] [class*="bg-black/"] .text-amber-300 { color: #fcd34d !important; }
+html[data-theme="light"] [class*="bg-black/"] .text-emerald-300 { color: #6ee7b7 !important; }
+html[data-theme="light"] [class*="bg-black/"] .text-sky-300 { color: #7dd3fc !important; }
+html[data-theme="light"] [class*="bg-black/"] .text-rose-200 { color: #fda4af !important; }
+
+/* === Saturated solid color buttons (amber CTA, premium gradient buttons) === */
+html[data-theme="light"] .bg-amber-500,
+html[data-theme="light"] .bg-amber-400 {
+  /* keep their amber bg — they have text-black which is already fine */
+}
+
+/* === Pricing premium card sits on a deep dark bg even in light mode === */
+html[data-theme="light"] [class*="bg-[#0B0F0D]"] .text-white,
+html[data-theme="light"] [class*="bg-[#060C09]"] .text-white { color: white !important; }
+html[data-theme="light"] [class*="bg-[#0B0F0D]"] .text-white\/90 { color: rgba(255,255,255,0.90) !important; }
+html[data-theme="light"] [class*="bg-[#0B0F0D]"] .text-white\/80 { color: rgba(255,255,255,0.80) !important; }
+html[data-theme="light"] [class*="bg-[#0B0F0D]"] .text-white\/70 { color: rgba(255,255,255,0.70) !important; }
+html[data-theme="light"] [class*="bg-[#0B0F0D]"] .text-white\/55 { color: rgba(255,255,255,0.55) !important; }
+html[data-theme="light"] [class*="bg-[#0B0F0D]"] .text-white\/45 { color: rgba(255,255,255,0.45) !important; }
+html[data-theme="light"] [class*="bg-[#0B0F0D]"] .text-white\/40 { color: rgba(255,255,255,0.40) !important; }
+
+/* === Image gradient overlays (teacher portraits) ===
+   The teacher portrait uses `bg-gradient-to-t from-[#060C09] via-[#060C09]/40 to-transparent`
+   to fade the portrait into the dark card bg. In light mode the card bg is WHITE, so the
+   dark fade creates an ugly hard band where the photo meets the text area.
+   Solution: flip the gradient stops to fade to white in light mode. */
+html[data-theme="light"] .from-\[\#060C09\] {
+  --tw-gradient-from: #FFFFFF var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+html[data-theme="light"] .via-\[\#060C09\]\/40 {
+  --tw-gradient-via-position: ;
+  --tw-gradient-via: rgba(255,255,255,0.55) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+
+/* === Campaign banner uses bg-[#0B0F0D]/95 inside its gradient frame — keep white text === */
+html[data-theme="light"] [class*="bg-[#0B0F0D]"] [class*="text-white"] { color: white !important; }
+
+/* ════════════════════════════════════════════════════════════════════
+   .dark-surface — opt-in marker class
+   Add to any container that has an intentional dark background regardless
+   of theme (CTA banner jewel bg, pricing premium card, hero phone glow,
+   etc.). Text inside stays white-on-dark in both modes.
+   ════════════════════════════════════════════════════════════════════ */
+html[data-theme="light"] .dark-surface,
+html[data-theme="light"] .dark-surface * {
+  color-scheme: dark;
+}
+html[data-theme="light"] .dark-surface .text-white { color: white !important; }
+html[data-theme="light"] .dark-surface .text-white\/90 { color: rgba(255,255,255,0.92) !important; }
+html[data-theme="light"] .dark-surface .text-white\/85 { color: rgba(255,255,255,0.88) !important; }
+html[data-theme="light"] .dark-surface .text-white\/80 { color: rgba(255,255,255,0.85) !important; }
+html[data-theme="light"] .dark-surface .text-white\/75 { color: rgba(255,255,255,0.78) !important; }
+html[data-theme="light"] .dark-surface .text-white\/70 { color: rgba(255,255,255,0.72) !important; }
+html[data-theme="light"] .dark-surface .text-white\/65 { color: rgba(255,255,255,0.68) !important; }
+html[data-theme="light"] .dark-surface .text-white\/60 { color: rgba(255,255,255,0.62) !important; }
+html[data-theme="light"] .dark-surface .text-white\/55 { color: rgba(255,255,255,0.58) !important; }
+html[data-theme="light"] .dark-surface .text-white\/50 { color: rgba(255,255,255,0.50) !important; }
+html[data-theme="light"] .dark-surface .text-white\/45 { color: rgba(255,255,255,0.45) !important; }
+html[data-theme="light"] .dark-surface .text-white\/40 { color: rgba(255,255,255,0.40) !important; }
+html[data-theme="light"] .dark-surface .text-white\/30 { color: rgba(255,255,255,0.30) !important; }
+
+/* Restore bright accent colors inside dark surfaces */
+html[data-theme="light"] .dark-surface .text-violet-200,
+html[data-theme="light"] .dark-surface .text-violet-300 { color: #c4b5fd !important; }
+html[data-theme="light"] .dark-surface .text-cyan-200,
+html[data-theme="light"] .dark-surface .text-cyan-300 { color: #67e8f9 !important; }
+html[data-theme="light"] .dark-surface .text-pink-200,
+html[data-theme="light"] .dark-surface .text-pink-300 { color: #f9a8d4 !important; }
+html[data-theme="light"] .dark-surface .text-amber-200,
+html[data-theme="light"] .dark-surface .text-amber-300 { color: #fcd34d !important; }
+html[data-theme="light"] .dark-surface .text-emerald-300 { color: #6ee7b7 !important; }
+
+/* CRITICAL: Restore dark wrapper backgrounds (otherwise the bg-[#0B0F0D]/95
+   override above flips them to white, making text-white invisible) */
+html[data-theme="light"] .dark-surface.bg-\[\#0B0F0D\],
+html[data-theme="light"] .dark-surface .bg-\[\#0B0F0D\] { background-color: #0B0F0D !important; }
+html[data-theme="light"] .dark-surface.bg-\[\#060C09\],
+html[data-theme="light"] .dark-surface .bg-\[\#060C09\] { background-color: #060C09 !important; }
+html[data-theme="light"] .dark-surface.bg-\[\#0B0F0D\]\/80,
+html[data-theme="light"] .dark-surface .bg-\[\#0B0F0D\]\/80 { background-color: rgba(11,15,13,0.80) !important; }
+html[data-theme="light"] .dark-surface.bg-\[\#0B0F0D\]\/85,
+html[data-theme="light"] .dark-surface .bg-\[\#0B0F0D\]\/85 { background-color: rgba(11,15,13,0.85) !important; }
+html[data-theme="light"] .dark-surface.bg-\[\#0B0F0D\]\/95,
+html[data-theme="light"] .dark-surface .bg-\[\#0B0F0D\]\/95 { background-color: rgba(11,15,13,0.95) !important; }
+html[data-theme="light"] .dark-surface.bg-\[\#0B0F0D\]\/97,
+html[data-theme="light"] .dark-surface .bg-\[\#0B0F0D\]\/97 { background-color: rgba(11,15,13,0.97) !important; }
+html[data-theme="light"] .dark-surface.bg-\[\#060C09\]\/85,
+html[data-theme="light"] .dark-surface .bg-\[\#060C09\]\/85 { background-color: rgba(6,12,9,0.85) !important; }
+html[data-theme="light"] .dark-surface.bg-\[\#060C09\]\/90,
+html[data-theme="light"] .dark-surface .bg-\[\#060C09\]\/90 { background-color: rgba(6,12,9,0.90) !important; }
+html[data-theme="light"] .dark-surface.bg-\[\#060C09\]\/95,
+html[data-theme="light"] .dark-surface .bg-\[\#060C09\]\/95 { background-color: rgba(6,12,9,0.95) !important; }
+
+/* Cards/borders inside dark surfaces shouldn't get the light-mode override */
+html[data-theme="light"] .dark-surface .card-glass {
+  background: rgba(255,255,255,0.04) !important;
+  border-color: rgba(255,255,255,0.10) !important;
+  backdrop-filter: blur(16px);
+  box-shadow: none;
+}
+html[data-theme="light"] .dark-surface .bg-white\/\[0\.02\],
+html[data-theme="light"] .dark-surface .bg-white\/\[0\.03\],
+html[data-theme="light"] .dark-surface .bg-white\/\[0\.04\],
+html[data-theme="light"] .dark-surface .bg-white\/5,
+html[data-theme="light"] .dark-surface .bg-white\/8,
+html[data-theme="light"] .dark-surface .bg-white\/10 { background-color: rgba(255,255,255,0.06) !important; }
+html[data-theme="light"] .dark-surface .border-white\/5,
+html[data-theme="light"] .dark-surface .border-white\/8,
+html[data-theme="light"] .dark-surface .border-white\/10,
+html[data-theme="light"] .dark-surface .border-white\/15,
+html[data-theme="light"] .dark-surface .border-white\/20 { border-color: rgba(255,255,255,0.12) !important; }
+
+/* ── Smooth theme transitions for surfaces ── */
+html[data-theme="light"] *,
+html:not([data-theme="light"]) * {
+  transition-property: background-color, border-color, color;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+}
+

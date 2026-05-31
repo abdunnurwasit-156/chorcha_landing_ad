@@ -69,7 +69,7 @@ export default function CampaignBanner({ data }) {
                             : 'from-violet-500/60 via-pink-500/40 to-cyan-400/60'
 
   return (
-    <section className="px-4 sm:px-6 mt-2 sm:-mt-8 mb-8 sm:mb-10 relative z-10">
+    <section data-campaign-banner className="px-4 sm:px-6 mt-2 sm:-mt-8 mb-8 sm:mb-10 relative z-10">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -79,7 +79,7 @@ export default function CampaignBanner({ data }) {
           className="relative"
         >
           <div className={`rounded-2xl sm:rounded-[24px] p-[1.5px] bg-gradient-to-r ${accentRing}`}>
-            <div className="relative rounded-[15px] sm:rounded-[22px] overflow-hidden bg-[#0B0F0D]/95 backdrop-blur-xl">
+            <div className="dark-surface relative rounded-[15px] sm:rounded-[22px] overflow-hidden bg-[#0B0F0D]/95 backdrop-blur-xl">
               {/* Background glows */}
               <div className="absolute inset-0 pointer-events-none">
                 <div className={`absolute -top-16 -left-10 w-60 h-60 rounded-full blur-[90px] opacity-30 ${isHSC ? 'bg-amber-500' : 'bg-violet-500'}`} />

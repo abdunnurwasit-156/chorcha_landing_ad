@@ -43,7 +43,7 @@ function PlanCard({ plan, fullWidth = false }) {
   if (plan.popular) {
     return (
       <div className={`rounded-[22px] p-[1.5px] ${fullWidth ? 'w-full' : ''}`} style={{ background: premiumGradient }}>
-        <div className="rounded-[21px] p-6 flex flex-col relative overflow-hidden h-full"
+        <div className="dark-surface rounded-[21px] p-6 flex flex-col relative overflow-hidden h-full"
           style={{ background: 'linear-gradient(145deg, rgba(0,166,172,0.03) 0%, rgba(6,12,9,0.99) 40%, rgba(102,57,195,0.03) 100%)' }}>
           <div className="absolute top-4 right-4 flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-bold text-white"
             style={{ background: premiumGradient }}>

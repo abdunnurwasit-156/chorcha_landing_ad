@@ -101,7 +101,7 @@ export default function ComparisonTable({ data }) {
                 {typeof row.chorcha === 'boolean' ? (
                   row.chorcha ? (
                     <span
-                      className="w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center"
+                      className="dark-surface w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center"
                       style={{ background: 'linear-gradient(135deg, #00a6ac, #6639c3)' }}
                     >
                       <Check size={11} className="text-white" strokeWidth={2.5} />
