@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { BookOpen, ChevronDown, Play, PlayCircle, Clock, Lock, ChevronsDown } from 'lucide-react'
+import { BookOpen, ChevronDown, Play, PlayCircle, Clock, Lock, ChevronsDown, ChevronsUp } from 'lucide-react'
 
 const COLLAPSED_COUNT = 6
+const SUBJECTS_PREVIEW = 5
 
 function ChapterRow({ chapter }) {
   return (
@@ -129,6 +130,13 @@ function SubjectAccordion({ subj, isOpen, onToggle }) {
 
 export default function Syllabus({ data }) {
   const [openIndex, setOpenIndex] = useState(0)
+  const [showAllSubjects, setShowAllSubjects] = useState(false)
+  const subjects = data.subjects || []
+  const hasMoreSubjects = subjects.length > SUBJECTS_PREVIEW
+  const visibleSubjects = showAllSubjects || !hasMoreSubjects
+    ? subjects
+    : subjects.slice(0, SUBJECTS_PREVIEW)
+  const hiddenCount = subjects.length - SUBJECTS_PREVIEW
 
   return (
     <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 relative overflow-hidden">
@@ -154,7 +162,7 @@ export default function Syllabus({ data }) {
         </motion.div>
 
         <div className="flex flex-col gap-3">
-          {data.subjects.map((subj, i) => (
+          {visibleSubjects.map((subj, i) => (
             <SubjectAccordion
               key={subj.name}
               subj={subj}
@@ -163,6 +171,30 @@ export default function Syllabus({ data }) {
             />
           ))}
         </div>
+
+        {hasMoreSubjects && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -60px 0px" }}
+            className="flex justify-center mt-6"
+          >
+            <button
+              onClick={() => {
+                // If collapsing, also close any expanded subject beyond preview
+                if (showAllSubjects && openIndex >= SUBJECTS_PREVIEW) setOpenIndex(-1)
+                setShowAllSubjects(s => !s)
+              }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold border border-white/10 bg-white/[0.03] text-white/75 hover:text-white hover:border-white/25 hover:bg-white/[0.06] transition-all"
+            >
+              {showAllSubjects ? (
+                <>কম দেখাও <ChevronsUp size={14} /></>
+              ) : (
+                <>আরো {hiddenCount}টি বিষয় দেখো <ChevronsDown size={14} /></>
+              )}
+            </button>
+          </motion.div>
+        )}
       </div>
     </section>
   )

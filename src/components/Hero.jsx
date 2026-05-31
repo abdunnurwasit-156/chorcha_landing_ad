@@ -1,60 +1,6 @@
 import { motion } from "framer-motion";
-import {
-  Download,
-  ArrowDown,
-  Users,
-  Video,
-  ClipboardList,
-  Bot,
-  Sparkles,
-} from "lucide-react";
+import { Download, ArrowDown } from "lucide-react";
 import { PAGES } from "../data/content";
-
-const statIcons = {
-  users: Users,
-  video: Video,
-  clipboard: ClipboardList,
-  bot: Bot,
-  sparkles: Sparkles,
-};
-
-const statPalette = {
-  violet: {
-    text: "text-violet-200",
-    iconBg: "bg-violet-500/20",
-    iconBorder: "border-violet-400/30",
-    iconText: "text-violet-300",
-    glow: "rgba(167,139,250,0.30)",
-  },
-  cyan: {
-    text: "text-cyan-200",
-    iconBg: "bg-cyan-500/20",
-    iconBorder: "border-cyan-400/30",
-    iconText: "text-cyan-300",
-    glow: "rgba(34,211,238,0.30)",
-  },
-  pink: {
-    text: "text-pink-200",
-    iconBg: "bg-pink-500/20",
-    iconBorder: "border-pink-400/30",
-    iconText: "text-pink-300",
-    glow: "rgba(244,114,182,0.30)",
-  },
-  amber: {
-    text: "text-amber-200",
-    iconBg: "bg-amber-500/20",
-    iconBorder: "border-amber-400/30",
-    iconText: "text-amber-300",
-    glow: "rgba(251,191,36,0.30)",
-  },
-};
-
-// Desktop float positions — pushed into the gutters so they clear the phone
-const floatPos = [
-  "top-[3%] -left-4",
-  "top-[42%] -right-3",
-  "bottom-[3%] -left-4",
-];
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -62,39 +8,8 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] },
 });
 
-function StatChip({ s, palette, className = "", floating = false }) {
-  const Icon = statIcons[s.icon] || Sparkles;
-  const p = palette[s.color] || palette.violet;
-  // Floating chips are deliberately more compact than the inline mobile ones
-  const pad = floating ? "pl-1.5 pr-3 py-1.5" : "pl-2 pr-4 py-2";
-  const dot = floating ? "w-6 h-6" : "w-7 h-7";
-  const val = floating ? "text-sm" : "text-base";
-  const lbl = floating ? "text-[11px]" : "text-xs sm:text-sm";
-  return (
-    <div
-      className={`flex items-center gap-2 ${pad} rounded-full bg-[#0B0F0D]/85 border border-white/10 backdrop-blur-md ${floating ? "shadow-2xl" : ""} ${className}`}
-      style={{
-        boxShadow: floating
-          ? `0 8px 26px -12px ${p.glow}, 0 0 0 1px rgba(255,255,255,0.03)`
-          : `0 0 24px -8px ${p.glow}`,
-      }}
-    >
-      <span
-        className={`${dot} rounded-full flex items-center justify-center border ${p.iconBg} ${p.iconBorder}`}
-      >
-        <Icon size={12} className={p.iconText} strokeWidth={2.25} />
-      </span>
-      <span className="flex items-baseline gap-1.5 leading-none whitespace-nowrap">
-        <span className={`${val} font-black ${p.text}`}>{s.value}</span>
-        <span className={`${lbl} text-white/55`}>{s.label}</span>
-      </span>
-    </div>
-  );
-}
-
 export default function Hero({ data }) {
   const isHSC = data.id === PAGES.HSC;
-  const stats = (data.heroStats || []).slice(0, 3);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -130,7 +45,6 @@ export default function Hero({ data }) {
             </span>
           </motion.h1>
 
-          {/* Sub paragraph (chips now float around the phone) */}
           <motion.p
             {...fadeUp(0.3)}
             className="text-base sm:text-lg text-white/55 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
@@ -140,7 +54,7 @@ export default function Hero({ data }) {
 
           <motion.div
             {...fadeUp(0.4)}
-            className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-8"
+            className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
           >
             <motion.button
               whileHover={{ scale: 1.03 }}
@@ -158,65 +72,36 @@ export default function Hero({ data }) {
               {data.ctaSecondary} <ArrowDown size={14} />
             </motion.button>
           </motion.div>
-
-          {/* Mobile inline chips (floating version shown on lg+) */}
-          {stats.length > 0 && (
-            <motion.div
-              {...fadeUp(0.5)}
-              className="flex lg:hidden flex-wrap justify-center gap-2.5 max-w-xl mx-auto"
-            >
-              {stats.map((s) => (
-                <StatChip key={s.label} s={s} palette={statPalette} />
-              ))}
-            </motion.div>
-          )}
         </div>
 
-        {/* Right: app composite */}
+        {/* Right: promo video */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="flex-1 flex justify-center items-center relative w-full"
         >
-          <div className="animate-float relative">
-            {/* Glow behind phone — calmer, green-led with subtle cool accents */}
-            <div className="absolute inset-0 rounded-[44px] blur-3xl opacity-[0.28] scale-90 bg-violet-500" />
-            <div className="absolute inset-0 rounded-[44px] blur-3xl opacity-[0.16] scale-95 translate-x-8 translate-y-8 bg-pink-500" />
-            <div className="absolute inset-0 rounded-[44px] blur-3xl opacity-[0.14] scale-95 -translate-x-8 -translate-y-4 bg-cyan-400" />
+          <div className="relative w-full max-w-[560px] mx-auto">
+            {/* Glow behind video — multicolor, calmed down */}
+            <div className="absolute inset-0 rounded-[28px] blur-3xl opacity-[0.28] scale-95 bg-violet-500" />
+            <div className="absolute inset-0 rounded-[28px] blur-3xl opacity-[0.16] scale-95 translate-x-8 translate-y-8 bg-pink-500" />
+            <div className="absolute inset-0 rounded-[28px] blur-3xl opacity-[0.14] scale-95 -translate-x-8 -translate-y-4 bg-cyan-400" />
 
-            <img
-              src="/assets/hero-screen.png"
-              alt="Chorcha App"
-              className="relative w-56 sm:w-64 lg:w-64 drop-shadow-2xl"
-            />
-          </div>
-
-          {/* Floating chips — desktop only, spread to the column edges (clear of the phone) */}
-          {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, scale: 0.85, y: 8 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{
-                delay: 0.7 + i * 0.14,
-                duration: 0.55,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className={`hidden lg:flex absolute ${floatPos[i]} z-10`}
+            {/* Promo video — autoplay muted loop */}
+            <div
+              className="relative w-full rounded-[20px] sm:rounded-[24px] overflow-hidden border border-white/10 shadow-2xl"
+              style={{ aspectRatio: '16 / 9' }}
             >
-              <motion.div
-                animate={{ y: [0, -7, 0] }}
-                transition={{
-                  duration: 4 + i,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <StatChip s={s} palette={statPalette} floating />
-              </motion.div>
-            </motion.div>
-          ))}
+              <iframe
+                src="https://www.youtube.com/embed/awKirOXVI8s?controls=1&modestbranding=1&rel=0&playsinline=1"
+                title="Chorcha প্রোমো"
+                className="absolute inset-0 w-full h-full"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

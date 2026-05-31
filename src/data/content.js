@@ -13,6 +13,17 @@ export const admissionData = {
   ctaSecondary: "আরও জানো",
   trustLine: "১০ লাখ+ শিক্ষার্থী ইতিমধ্যেই শুরু করেছে",
   accentColor: "purple",
+  // ── Campaign banner (set enabled:false to hide). endsAt = ISO date string. ──
+  campaign: {
+    enabled: true,
+    eyebrow: "লিমিটেড টাইম অফার",
+    headline: "অ্যাডমিশন কিকঅফ অফার",
+    sub: "নতুন ব্যাচ শুরু — পুরো প্যাকেজে বিশেষ ছাড়।",
+    discount: "৩০%",
+    code: "ADMISSION30",
+    endsAt: "2026-06-15T23:59:59+06:00",
+    ctaLabel: "অফার নাও",
+  },
   heroStats: [
     { value: "১০ লাখ+", label: "শিক্ষার্থী", icon: "users", color: "violet" },
     { value: "৪৫+", label: "লাইভ ক্লাস", icon: "video", color: "cyan" },
@@ -279,6 +290,17 @@ export const hscData = {
   ctaSecondary: "আরও জানো",
   trustLine: "১০ লাখ+ শিক্ষার্থী ইতিমধ্যেই Chorcha-তে",
   accentColor: "amber",
+  // ── Campaign banner (set enabled:false to hide). endsAt = ISO date string. ──
+  campaign: {
+    enabled: true,
+    eyebrow: "আর্লি বার্ড অফার",
+    headline: "HSC 28 প্রিমিয়াম প্যাকেজে বড় ছাড়",
+    sub: "যত আগে শুরু করবে, তত বেশি প্র্যাকটিস।",
+    discount: "৪৫%",
+    code: "HSC28EARLY",
+    endsAt: "2026-06-30T23:59:59+06:00",
+    ctaLabel: "প্যাকেজ নাও",
+  },
   stats: [
     { value: "১০ লাখ+", label: "অ্যাপ ডাউনলোড", icon: "users" },
     { value: "১০ লাখ+", label: "প্রশ্নের ব্যাংক", icon: "file-text" },

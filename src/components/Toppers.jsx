@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Quote } from 'lucide-react'
+import { Quote, ArrowRight } from 'lucide-react'
 import { PAGES } from '../data/content'
 
 const palette = [
@@ -104,6 +104,25 @@ export default function Toppers({ data }) {
           <MarqueeRow items={rows[1]} direction="right" startIndex={1} />
           <MarqueeRow items={rows[2]} direction="left"  startIndex={2} />
         </div>
+      </motion.div>
+
+      {/* CTA — link to full reviews page */}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "0px 0px -60px 0px" }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+        className="flex justify-center mt-10 sm:mt-12 px-4"
+      >
+        <motion.a
+          href="/reviews"
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border border-white/15 text-white/80 hover:text-white hover:border-white/30 hover:bg-white/[0.04] transition-all backdrop-blur"
+        >
+          সব রিভিউ দেখো
+          <ArrowRight size={15} />
+        </motion.a>
       </motion.div>
     </section>
   )
