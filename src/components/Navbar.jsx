@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Check } from 'lucide-react'
 import { PAGES } from '../data/content'
-import ThemeToggle from './ThemeToggle'
+import StreamSwitcher from './StreamSwitcher'
 
 const PAGE_OPTIONS = [
   { id: PAGES.ADMISSION, label: 'কলেজ অ্যাডমিশন ২৬', sub: 'Admission 26' },
@@ -35,22 +35,29 @@ export default function Navbar({ page, activePage, onSwitch }) {
         scrolled || menuOpen ? 'bg-[#060C09]/90 backdrop-blur-xl border-b border-white/5' : ''
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3 relative">
+        {/* Left: logo */}
+        <div className="flex items-center gap-2 flex-shrink-0">
           <img src="/assets/logo-dark.png" alt="Chorcha" className="dark-logo h-7 sm:h-8 w-auto" />
           <img src="/assets/logo.png" alt="Chorcha" className="light-logo h-7 sm:h-8 w-auto" />
         </div>
 
-        <div className="hidden md:flex items-center gap-6">
-          {navLinks.map(link => (
-            <a key={link} href="#" className="text-white/55 hover:text-white text-sm transition-colors duration-200">
-              {link}
-            </a>
-          ))}
+        {/* Center cluster — nav links + stream switcher grouped, always centered.
+            Mobile: only the switcher (links hide to hamburger).
+            Desktop: full cluster (links + switcher) centered as one unit. */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10 flex items-center gap-5 lg:gap-6">
+          <div className="hidden md:flex items-center gap-5">
+            {navLinks.map(link => (
+              <a key={link} href="#" className="text-white/55 hover:text-white text-sm transition-colors duration-200 whitespace-nowrap">
+                {link}
+              </a>
+            ))}
+          </div>
+          <StreamSwitcher />
         </div>
 
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
+        {/* Right: hamburger */}
+        <div className="flex items-center gap-2 flex-shrink-0">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="মেনু"
