@@ -68,7 +68,7 @@ const colorMap = {
 export default function Features({ data }) {
   const isHSC = data.id === PAGES.HSC;
   return (
-    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
+    <section id="features" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

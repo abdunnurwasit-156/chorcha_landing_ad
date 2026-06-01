@@ -60,7 +60,7 @@ export default function Instructors({ data }) {
   }, [updateArrows, startAuto, stopAuto]);
 
   return (
-    <section className="pt-10 sm:pt-14 pb-16 sm:pb-20 md:pb-24 relative overflow-hidden">
+    <section id="teachers" className="pt-10 sm:pt-14 pb-16 sm:pb-20 md:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/3 left-[5%] w-[500px] h-[500px] rounded-full blur-[160px] opacity-[0.07] bg-violet-500" />
         <div className="absolute bottom-1/4 right-[5%] w-[500px] h-[500px] rounded-full blur-[160px] opacity-[0.07] bg-cyan-400" />

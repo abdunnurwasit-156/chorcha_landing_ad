@@ -139,7 +139,7 @@ export default function Syllabus({ data }) {
   const hiddenCount = subjects.length - SUBJECTS_PREVIEW
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 relative overflow-hidden">
+    <section id="syllabus" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/3 left-[10%] w-[400px] h-[400px] rounded-full blur-[160px] opacity-[0.07] bg-violet-500" />
         <div className="absolute bottom-1/4 right-[10%] w-[400px] h-[400px] rounded-full blur-[160px] opacity-[0.07] bg-cyan-400" />

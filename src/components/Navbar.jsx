@@ -22,9 +22,22 @@ export default function Navbar({ page, activePage, onSwitch }) {
 
   useEffect(() => { setMenuOpen(false) }, [activePage])
 
+  // Links per page — point to actual sections that exist on each page.
   const navLinks = isHSC
-    ? ['ফিচার', 'সিলেবাস', 'টিচার', 'রিভিউ', 'প্রাইসিং']
-    : ['ফিচার', 'মডেল টেস্ট', 'টিচার', 'রিভিউ', 'FAQ']
+    ? [
+        { label: 'ফিচার',    href: '#features' },
+        { label: 'সিলেবাস',  href: '#syllabus' },
+        { label: 'টিচার',    href: '#teachers' },
+        { label: 'রিভিউ',    href: '#reviews' },
+        { label: 'প্রাইসিং', href: '#pricing' },
+      ]
+    : [
+        { label: 'ফিচার',     href: '#features' },
+        { label: 'অ্যাপ',      href: '#app-preview' },
+        { label: 'টিচার',     href: '#teachers' },
+        { label: 'রিভিউ',     href: '#reviews' },
+        { label: 'FAQ',        href: '#faq' },
+      ]
 
   return (
     <motion.nav
@@ -48,8 +61,8 @@ export default function Navbar({ page, activePage, onSwitch }) {
         <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10 flex items-center gap-5 lg:gap-6">
           <div className="hidden md:flex items-center gap-5">
             {navLinks.map(link => (
-              <a key={link} href="#" className="text-white/55 hover:text-white text-sm transition-colors duration-200 whitespace-nowrap">
-                {link}
+              <a key={link.label} href={link.href} className="text-white/55 hover:text-white text-sm transition-colors duration-200 whitespace-nowrap">
+                {link.label}
               </a>
             ))}
           </div>
@@ -129,8 +142,8 @@ export default function Navbar({ page, activePage, onSwitch }) {
                 </div>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-1 mb-4">
                   {navLinks.map(link => (
-                    <a key={link} href="#" className="py-2 text-sm text-white/70 hover:text-white transition-colors">
-                      {link}
+                    <a key={link.label} href={link.href} className="py-2 text-sm text-white/70 hover:text-white transition-colors">
+                      {link.label}
                     </a>
                   ))}
                 </div>

@@ -62,7 +62,7 @@ export default function Toppers({ data }) {
   ]
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 relative overflow-hidden">
+    <section id="reviews" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 relative overflow-hidden">
       {/* Background: pattern + soft blobs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 lines-pattern" />

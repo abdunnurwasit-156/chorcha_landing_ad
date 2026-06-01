@@ -62,7 +62,7 @@ export default function AppShowcase({ data }) {
   const isHSC = data.id === PAGES.HSC;
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 relative overflow-hidden">
+    <section id="app-preview" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/3 left-[10%] w-[500px] h-[500px] rounded-full blur-[160px] opacity-[0.10] bg-violet-500" />
         <div className="absolute bottom-1/4 right-[10%] w-[500px] h-[500px] rounded-full blur-[160px] opacity-[0.10] bg-pink-500" />
