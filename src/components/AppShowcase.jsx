@@ -62,19 +62,19 @@ export default function AppShowcase({ data }) {
   const isHSC = data.id === PAGES.HSC;
 
   return (
-    <section id="app-preview" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 relative overflow-hidden">
+    <section id="app-preview" className="py-16 sm:py-20 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/3 left-[10%] w-[500px] h-[500px] rounded-full blur-[160px] opacity-[0.10] bg-violet-500" />
         <div className="absolute bottom-1/4 right-[10%] w-[500px] h-[500px] rounded-full blur-[160px] opacity-[0.10] bg-pink-500" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full blur-[180px] opacity-[0.08] bg-cyan-400" />
       </div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1140px] mx-auto relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -80px 0px" }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-12 sm:mb-16 px-4 sm:px-6"
         >
           <span className="text-xs font-semibold tracking-widest uppercase mb-4 block text-gradient-cool">
             অ্যাপ প্রিভিউ
@@ -90,7 +90,45 @@ export default function AppShowcase({ data }) {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
+        {/* ─────────── MOBILE: horizontal scroll carousel ─────────── */}
+        <div className="md:hidden relative">
+          <div
+            className="flex gap-3 overflow-x-auto scroll-smooth pl-6 pr-4 pb-2 snap-x"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {videos.map((v, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "0px 0px -60px 0px" }}
+                transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
+                className="flex flex-col items-center flex-shrink-0 snap-start"
+                style={{ width: 140 }}
+              >
+                <div
+                  className={`mb-3 px-2.5 py-0.5 rounded-full text-[10px] font-semibold border ${v.chipBg} ${v.chipBorder} ${v.chipText} whitespace-nowrap`}
+                >
+                  {v.label}
+                </div>
+
+                <div className="relative">
+                  <div className={`absolute inset-0 rounded-[24px] blur-2xl opacity-35 scale-90 ${v.bg}`} />
+                  <div className="relative w-[140px] rounded-[24px] overflow-hidden shadow-2xl" style={{ aspectRatio: '9/19.5' }}>
+                    <video src={v.src} autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" />
+                  </div>
+                </div>
+
+                <p className="text-center text-[11px] text-white/60 mt-3 leading-snug">
+                  {v.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* ─────────── DESKTOP (md+): 3-col grid, 6 mockups across 2 rows ─────────── */}
+        <div className="hidden md:grid grid-cols-3 gap-x-6 gap-y-12 justify-items-center px-4 sm:px-6">
           {videos.map((v, i) => (
             <motion.div
               key={i}
@@ -100,27 +138,16 @@ export default function AppShowcase({ data }) {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="flex flex-col items-center"
             >
-              {/* Video label chip */}
               <div
                 className={`mb-4 px-3 py-1 rounded-full text-xs font-semibold border ${v.chipBg} ${v.chipBorder} ${v.chipText}`}
               >
                 {v.label}
               </div>
 
-              {/* Phone frame with video */}
               <div className="relative">
-                <div
-                  className={`absolute inset-0 rounded-[36px] blur-2xl opacity-35 scale-90 ${v.bg}`}
-                />
-                <div className="relative w-64 sm:w-60 md:w-56 rounded-[36px] overflow-hidden shadow-2xl" style={{ aspectRatio: '9/19.5' }}>
-                  <video
-                    src={v.src}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
+                <div className={`absolute inset-0 rounded-[36px] blur-2xl opacity-35 scale-90 ${v.bg}`} />
+                <div className="relative w-56 rounded-[36px] overflow-hidden shadow-2xl" style={{ aspectRatio: '9/19.5' }}>
+                  <video src={v.src} autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" />
                 </div>
               </div>
 

@@ -10,8 +10,10 @@ const subjectPalette = [
   { text: "text-amber-300",  dot: "bg-amber-500",  glow: "rgba(251,191,36,0.3)" },
 ];
 
-const CARD_WIDTH = 260; // px + gap — used for scroll step
-const GAP = 16;
+// Responsive widths — mobile keeps ~2.5 cards visible, desktop gets roomier.
+// Scroll step uses an average so arrow nav feels right on both.
+const CARD_WIDTH = 200; // px — averaged for scroll step calc
+const GAP = 12;
 
 export default function Instructors({ data }) {
   const isHSC = data.id === PAGES.HSC;
@@ -66,7 +68,7 @@ export default function Instructors({ data }) {
         <div className="absolute bottom-1/4 right-[5%] w-[500px] h-[500px] rounded-full blur-[160px] opacity-[0.07] bg-cyan-400" />
       </div>
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="max-w-[1140px] mx-auto relative">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -121,7 +123,7 @@ export default function Instructors({ data }) {
           {/* Scrollable track */}
           <div
             ref={trackRef}
-            className="flex gap-4 overflow-x-auto scroll-smooth px-10 sm:px-14 pb-2"
+            className="flex gap-3 overflow-x-auto scroll-smooth px-4 sm:px-14 pb-2"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {data.instructors.map((inst, i) => {
@@ -131,56 +133,54 @@ export default function Instructors({ data }) {
                   key={inst.name}
                   whileHover={{ y: -6 }}
                   transition={{ duration: 0.25 }}
-                  className="group card-glass border border-white/8 rounded-3xl overflow-hidden flex-shrink-0 transition-shadow duration-300 cursor-default"
-                  style={{ width: CARD_WIDTH, boxShadow: `0 0 0 0 ${c.glow}`, willChange: "transform" }}
+                  className="group card-glass border border-white/8 rounded-2xl overflow-hidden flex-shrink-0 transition-shadow duration-300 cursor-default w-[150px] sm:w-[185px] md:w-[210px] lg:w-[230px]"
+                  style={{ boxShadow: `0 0 0 0 ${c.glow}`, willChange: "transform" }}
                 >
-                  {/* Portrait */}
-                  <div className="relative w-full overflow-hidden" style={{ aspectRatio: "3/4" }}>
+                  {/* Portrait — square */}
+                  <div className="relative w-full overflow-hidden" style={{ aspectRatio: "1/1" }}>
                     <img
                       src={inst.avatar}
                       alt={inst.name}
                       className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#060C09] via-[#060C09]/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#060C09] via-[#060C09]/35 to-transparent" />
 
                     {/* Verified badge — top-right */}
-                    <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-black/55 backdrop-blur-md border border-white/15">
-                      <BadgeCheck size={12} className="text-cyan-300" strokeWidth={2.5} />
-                      <span className="text-[10px] font-semibold text-white/90">ভেরিফাইড</span>
+                    <div className="absolute top-2 right-2 flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-black/55 backdrop-blur-md border border-white/15">
+                      <BadgeCheck size={10} className="text-cyan-300" strokeWidth={2.5} />
+                      <span className="text-[9px] font-semibold text-white/90">ভেরিফাইড</span>
                     </div>
 
-                    {/* Subject chip — bottom-left over image */}
-                    <div className={`absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-black/55 backdrop-blur-md border ${c.text === 'text-violet-300' ? 'border-violet-400/40' : c.text === 'text-cyan-300' ? 'border-cyan-400/40' : c.text === 'text-pink-300' ? 'border-pink-400/40' : 'border-amber-400/40'}`}>
-                      <span className={`text-[11px] font-bold ${c.text}`}>{inst.subject}</span>
+                    {/* Subject chip — bottom-left */}
+                    <div className={`absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-black/55 backdrop-blur-md border ${c.text === 'text-violet-300' ? 'border-violet-400/40' : c.text === 'text-cyan-300' ? 'border-cyan-400/40' : c.text === 'text-pink-300' ? 'border-pink-400/40' : 'border-amber-400/40'}`}>
+                      <span className={`text-[10px] font-bold ${c.text}`}>{inst.subject}</span>
                     </div>
                   </div>
 
                   {/* Info */}
-                  <div className="px-4 py-4">
+                  <div className="px-3 sm:px-3.5 py-2.5 sm:py-3">
                     {/* Name */}
-                    <h3 className="text-base font-bold text-white mb-2.5 truncate">{inst.name}</h3>
+                    <h3 className="text-sm sm:text-[15px] md:text-base font-bold text-white mb-1.5 truncate leading-tight">{inst.name}</h3>
 
                     {/* University row */}
                     {inst.university && (
-                      <div className="flex items-center gap-2 mb-2">
-                        <GraduationCap size={13} className="text-white/40 flex-shrink-0" />
-                        <span className="text-xs text-white/75 font-medium truncate">
+                      <div className="flex items-center gap-1.5 mb-1">
+                        <GraduationCap size={12} className="text-white/40 flex-shrink-0" />
+                        <span className="text-[11px] sm:text-xs text-white/75 font-medium truncate">
                           {inst.university}
-                          {inst.degree && <span className="text-white/40"> · {inst.degree}</span>}
                         </span>
                       </div>
                     )}
 
                     {/* Experience row */}
                     {inst.experience && (
-                      <div className="flex items-center gap-2">
-                        <Award size={13} className="text-white/40 flex-shrink-0" />
-                        <span className="text-xs text-white/75 font-medium">
-                          {inst.experience} পড়ানোর অভিজ্ঞতা
+                      <div className="flex items-center gap-1.5">
+                        <Award size={12} className="text-white/40 flex-shrink-0" />
+                        <span className="text-[11px] sm:text-xs text-white/75 font-medium truncate">
+                          {inst.experience} অভিজ্ঞতা
                         </span>
                       </div>
                     )}
-
                   </div>
                 </motion.div>
               );

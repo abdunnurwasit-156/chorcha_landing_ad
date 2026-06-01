@@ -48,7 +48,7 @@ export default function Navbar({ page, activePage, onSwitch }) {
         scrolled || menuOpen ? 'bg-[#060C09]/90 backdrop-blur-xl border-b border-white/5' : ''
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3 relative">
+      <div className="max-w-[1140px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3 relative">
         {/* Left: logo */}
         <div className="flex items-center gap-2 flex-shrink-0">
           <img src="/assets/logo-dark.png" alt="Chorcha" className="dark-logo h-7 sm:h-8 w-auto" />
@@ -90,7 +90,7 @@ export default function Navbar({ page, activePage, onSwitch }) {
             transition={{ duration: 0.2 }}
             className="absolute left-0 right-0 top-16 bg-[#060C09]/95 backdrop-blur-xl border-b border-white/10"
           >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 sm:py-6">
+            <div className="max-w-[1140px] mx-auto px-4 sm:px-6 py-5 sm:py-6">
               {/* Page switcher block */}
               <div className="mb-6">
                 <div className="text-[10px] tracking-widest uppercase text-white/40 mb-3 font-semibold">

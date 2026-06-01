@@ -13,7 +13,7 @@ const palette = [
 export default function StatsBar({ data }) {
   return (
     <section className="py-6 border-y border-white/5 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-[1140px] mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {data.stats.map((stat, i) => {
             const Icon = iconMap[stat.icon] || Users

@@ -70,7 +70,7 @@ export default function CampaignBanner({ data }) {
 
   return (
     <section data-campaign-banner className="px-4 sm:px-6 mt-2 sm:-mt-8 mb-8 sm:mb-10 relative z-10">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1140px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

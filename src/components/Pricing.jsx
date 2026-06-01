@@ -116,7 +116,7 @@ export default function Pricing({ data }) {
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full blur-[160px] opacity-[0.08]" style={{ background: '#6639c3' }} />
       </div>
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="max-w-[1140px] mx-auto relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

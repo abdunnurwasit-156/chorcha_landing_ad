@@ -71,7 +71,7 @@ export default function Toppers({ data }) {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full blur-[160px] opacity-[0.06] bg-cyan-400" />
       </div>
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="max-w-[1140px] mx-auto relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

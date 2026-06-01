@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Check, X } from 'lucide-react'
+import { Check, X, Sparkles } from 'lucide-react'
 import { PAGES } from '../data/content'
 
 const ROWS_ADMISSION = [
@@ -59,15 +59,18 @@ export default function ComparisonTable({ data }) {
               <span className="text-[10px] sm:text-xs font-semibold text-white/40 tracking-widest uppercase">ফিচার</span>
             </div>
 
-            {/* Chorcha header — gradient */}
+            {/* Chorcha header — premium pill */}
             <div
-              className="px-2 sm:px-6 py-3 sm:py-4 border-b border-white/8 flex items-center justify-center gap-1.5"
-              style={{ background: 'linear-gradient(135deg, #00a6ac22, #6639c322)' }}
+              className="px-2 sm:px-6 py-3 sm:py-4 border-b border-white/8 flex items-center justify-center gap-1.5 relative"
+              style={{ background: 'linear-gradient(135deg, #00a6ac33, #6639c333)' }}
             >
-              <span className="font-black text-sm sm:text-base text-cyan-300">
+              <span
+                className="dark-surface inline-flex items-center gap-1 px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-sm font-black text-white whitespace-nowrap"
+                style={{ background: 'linear-gradient(135deg, #00a6ac, #6639c3)', boxShadow: 'inset 0 -3px 0 0 rgba(30,20,75,0.5)' }}
+              >
+                <Sparkles size={10} className="text-white" />
                 চর্চা
               </span>
-              <span className="text-white/60 text-xs sm:text-sm">✦</span>
             </div>
 
             {/* Other header */}
@@ -110,9 +113,14 @@ export default function ComparisonTable({ data }) {
                     <X size={14} className="text-white/20" />
                   )
                 ) : (
-                  <span className="text-sm sm:text-base font-bold whitespace-nowrap text-cyan-300">
-                    {row.chorcha}
-                  </span>
+                  <div className="flex flex-col items-center gap-0.5">
+                    <span className="text-lg sm:text-2xl font-black whitespace-nowrap text-gradient-cool leading-none">
+                      {row.chorcha}
+                    </span>
+                    <span className="text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded-md bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 whitespace-nowrap">
+                      ৯২% কম
+                    </span>
+                  </div>
                 )}
               </div>
 
@@ -125,7 +133,7 @@ export default function ComparisonTable({ data }) {
                     <X size={14} className="text-white/20" strokeWidth={2} />
                   )
                 ) : (
-                  <span className="text-sm sm:text-base text-white/40 whitespace-nowrap">{row.other}</span>
+                  <span className="text-sm sm:text-base text-white/40 line-through decoration-rose-400/50 whitespace-nowrap">{row.other}</span>
                 )}
               </div>
             </motion.div>

@@ -15,6 +15,7 @@ import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
 import StickyBuyBar from "../components/StickyBuyBar";
 import CampaignBanner from "../components/CampaignBanner";
+import EnrolledStrip from "../components/EnrolledStrip";
 import { hscData, PAGES } from "../data/content";
 
 export default function HSCPage({ activePage, onSwitch }) {
@@ -22,18 +23,18 @@ export default function HSCPage({ activePage, onSwitch }) {
     <div>
       <Navbar page={PAGES.HSC} activePage={activePage} onSwitch={onSwitch} />
       <Hero data={hscData} />
-      <CampaignBanner data={hscData} />
+      <EnrolledStrip data={hscData} />
+      {/* <CampaignBanner data={hscData} /> */}
       {/* <SummaryStats data={hscData} /> */}
       <Features data={hscData} />
-      <Syllabus data={hscData} />
-      <Pricing data={hscData} />
-      {/* <BatchInfo /> */}
-      <HowItWorks data={hscData} />
       <Instructors data={hscData} />
-      <Toppers data={hscData} />
-      <ComparisonTable data={hscData} />
+      <Syllabus data={hscData} />
+      {/* <HowItWorks data={hscData} /> */}
+      <Pricing data={hscData} />
+      {/* <ComparisonTable data={hscData} /> */}
       <AppShowcase data={hscData} />
       <FAQ data={hscData} />
+      <Toppers data={hscData} />
       <Footer page={PAGES.HSC} />
       <StickyBuyBar data={hscData} />
     </div>

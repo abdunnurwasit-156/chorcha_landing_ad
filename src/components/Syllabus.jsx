@@ -33,16 +33,6 @@ function ChapterRow({ chapter }) {
         </div>
       </div>
 
-      {chapter.available ? (
-        <button className="flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-2 rounded-full text-[11px] font-bold bg-violet-500 hover:bg-violet-400 text-white transition-colors flex-shrink-0 min-h-[32px]">
-          <Play size={10} fill="currentColor" />
-          দেখো
-        </button>
-      ) : (
-        <span className="px-2.5 sm:px-3 py-2 rounded-full text-[11px] font-semibold bg-white/5 border border-white/10 text-white/40 flex-shrink-0 min-h-[32px] inline-flex items-center">
-          শীঘ্রই
-        </span>
-      )}
     </div>
   )
 }

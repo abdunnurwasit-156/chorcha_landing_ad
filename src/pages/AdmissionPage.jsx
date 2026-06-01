@@ -22,11 +22,11 @@ export default function AdmissionPage({ activePage, onSwitch }) {
       <CampaignBanner data={admissionData} />
       <Features data={admissionData} />
       <SummaryStats data={admissionData} />
-      <HowItWorks data={admissionData} />
+      {/* <HowItWorks data={admissionData} /> */}
       <Instructors data={admissionData} />
       <Toppers data={admissionData} />
       <AppShowcase data={admissionData} />
-      <ComparisonTable data={admissionData} />
+      {/* <ComparisonTable data={admissionData} /> */}
       <CTABanner data={admissionData} />
       <FAQ data={admissionData} />
       <Footer page={PAGES.ADMISSION} />

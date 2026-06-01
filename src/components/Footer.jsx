@@ -4,7 +4,7 @@ export default function Footer({ page }) {
   const isHSC = page === PAGES.HSC
   return (
     <footer className="border-t border-white/5 py-10 sm:py-12 px-4 sm:px-6 mt-8 sm:mt-12">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6">
+      <div className="max-w-[1140px] mx-auto flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6">
         <div className="flex items-center gap-2">
           <img src="/assets/logo-dark.png" alt="Chorcha" className="h-7 w-auto" />
         </div>
