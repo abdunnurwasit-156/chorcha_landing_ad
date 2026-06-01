@@ -12,7 +12,7 @@ export default function Hero({ data }) {
   const isHSC = data.id === PAGES.HSC;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative lg:min-h-screen flex items-center justify-center overflow-hidden pt-16 lg:pt-20">
       {/* Multi-color blob composition — toned down on mobile */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-35 sm:opacity-80">
         <div className="absolute top-[-15%] left-[-10%] w-[360px] h-[360px] sm:w-[640px] sm:h-[640px] rounded-full blur-[100px] sm:blur-[140px] opacity-[0.16] bg-violet-500 animate-blob-a" />
@@ -23,7 +23,7 @@ export default function Hero({ data }) {
         <div className="absolute inset-0 opacity-[0.03] grid-overlay" />
       </div>
 
-      <div className="max-w-[1140px] mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20 flex flex-col lg:flex-row items-center gap-10 sm:gap-12 lg:gap-16 w-full relative">
+      <div className="max-w-[1140px] mx-auto px-4 sm:px-6 py-6 sm:py-12 lg:py-20 flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-16 w-full relative">
         {/* Left: copy */}
         <div className="flex-1 text-center lg:text-left">
           <motion.div {...fadeUp(0.1)}>
