@@ -55,9 +55,18 @@ export default function StickyBuyBar({ data }) {
         const r = pricing.getBoundingClientRect()
         pricingInView = r.top < window.innerHeight * 0.9 && r.bottom > 0
       }
+      // Hide while AppShowcase is visible — bar covers the video phones.
+      // Stays hidden through the whole pinned-scroll, reveals only after
+      // the section is fully out of view.
+      const appPreview = document.getElementById('app-preview')
+      let appPreviewInView = false
+      if (appPreview) {
+        const r = appPreview.getBoundingClientRect()
+        appPreviewInView = r.top < window.innerHeight && r.bottom > 0
+      }
       // Hide near the very bottom (footer)
       const nearBottom = window.innerHeight + window.scrollY > document.body.scrollHeight - 120
-      setVisible(heroPassed && !pricingInView && !nearBottom)
+      setVisible(heroPassed && !pricingInView && !appPreviewInView && !nearBottom)
     }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
