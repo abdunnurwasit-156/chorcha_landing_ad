@@ -1,18 +1,22 @@
+import { lazy, Suspense } from 'react'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Features from '../components/Features'
-import AppShowcase from '../components/AppShowcase'
 import SummaryStats from '../components/SummaryStats'
-import HowItWorks from '../components/HowItWorks'
-import Instructors from '../components/Instructors'
-import Toppers from '../components/Toppers'
-import ComparisonTable from '../components/ComparisonTable'
-import CTABanner from '../components/CTABanner'
 import CampaignBanner from '../components/CampaignBanner'
-import StickyCampaignBar from '../components/StickyCampaignBar'
-import FAQ from '../components/FAQ'
-import Footer from '../components/Footer'
 import { admissionData, PAGES } from '../data/content'
+
+// ── Code-split below-fold sections (matches HSCPage). Each lazy() call
+// produces its own chunk so the initial JS payload stays small for slow phones.
+const Instructors      = lazy(() => import('../components/Instructors'))
+const Toppers          = lazy(() => import('../components/Toppers'))
+const AppShowcase      = lazy(() => import('../components/AppShowcase'))
+const CTABanner        = lazy(() => import('../components/CTABanner'))
+const FAQ              = lazy(() => import('../components/FAQ'))
+const Footer           = lazy(() => import('../components/Footer'))
+const StickyCampaignBar = lazy(() => import('../components/StickyCampaignBar'))
+
+const SectionFallback = () => <div className="min-h-[200px]" />
 
 export default function AdmissionPage({ activePage, onSwitch }) {
   return (
@@ -22,15 +26,34 @@ export default function AdmissionPage({ activePage, onSwitch }) {
       <CampaignBanner data={admissionData} />
       <Features data={admissionData} />
       <SummaryStats data={admissionData} />
-      {/* <HowItWorks data={admissionData} /> */}
-      <Instructors data={admissionData} />
-      <Toppers data={admissionData} />
-      <AppShowcase data={admissionData} />
-      {/* <ComparisonTable data={admissionData} /> */}
-      <CTABanner data={admissionData} />
-      <FAQ data={admissionData} />
-      <Footer page={PAGES.ADMISSION} />
-      <StickyCampaignBar data={admissionData} />
+
+      <Suspense fallback={<SectionFallback />}>
+        <Instructors data={admissionData} />
+      </Suspense>
+
+      <Suspense fallback={<SectionFallback />}>
+        <Toppers data={admissionData} />
+      </Suspense>
+
+      <Suspense fallback={<SectionFallback />}>
+        <AppShowcase data={admissionData} />
+      </Suspense>
+
+      <Suspense fallback={<SectionFallback />}>
+        <CTABanner data={admissionData} />
+      </Suspense>
+
+      <Suspense fallback={<SectionFallback />}>
+        <FAQ data={admissionData} />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <Footer page={PAGES.ADMISSION} />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <StickyCampaignBar data={admissionData} />
+      </Suspense>
     </div>
   )
 }

@@ -27,16 +27,16 @@ function YouTubeFacade() {
       aria-label="Play video"
     >
       <img
-        src={`https://i.ytimg.com/vi/${YT_VIDEO_ID}/hqdefault.jpg`}
+        src={`https://i.ytimg.com/vi/${YT_VIDEO_ID}/mqdefault.jpg`}
         alt="Chorcha প্রোমো"
         loading="lazy"
         decoding="async"
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-black/15 group-hover:bg-black/25 transition-colors" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent group-hover:from-black/55 transition-colors" />
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-600 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
-          <Play size={28} className="text-white fill-current ml-1" />
+        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/95 backdrop-blur flex items-center justify-center shadow-2xl ring-1 ring-black/5 group-hover:scale-110 transition-transform">
+          <Play size={26} className="text-[#017A47] fill-current ml-1" strokeWidth={0} />
         </div>
       </div>
     </button>
