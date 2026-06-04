@@ -133,7 +133,7 @@ export default function Instructors({ data }) {
                   key={inst.name}
                   whileHover={{ y: -6 }}
                   transition={{ duration: 0.25 }}
-                  className="group card-glass border border-white/8 rounded-2xl overflow-hidden flex-shrink-0 transition-shadow duration-300 cursor-default w-[150px] sm:w-[185px] md:w-[210px] lg:w-[230px]"
+                  className="group card-glass border border-white/8 rounded-2xl overflow-hidden flex-shrink-0 transition-shadow duration-300 cursor-default w-[180px] sm:w-[195px] md:w-[210px] lg:w-[230px]"
                   style={{ boxShadow: `0 0 0 0 ${c.glow}`, willChange: "transform" }}
                 >
                   {/* Portrait — square */}
@@ -145,10 +145,11 @@ export default function Instructors({ data }) {
                       decoding="async"
                       className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#060C09] via-[#060C09]/35 to-transparent" />
+                    {/* Lighter gradient — only a hint at the bottom */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#060C09]/60 via-transparent to-transparent" />
 
-                    {/* Subject chip — bottom-left */}
-                    <div className={`absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-black/55 backdrop-blur-md border ${c.text === 'text-violet-300' ? 'border-violet-400/40' : c.text === 'text-cyan-300' ? 'border-cyan-400/40' : c.text === 'text-pink-300' ? 'border-pink-400/40' : 'border-amber-400/40'}`}>
+                    {/* Subject chip — top-right on mobile, bottom-left on desktop */}
+                    <div className={`absolute top-2 right-2 sm:top-auto sm:right-auto sm:bottom-2 sm:left-2 px-2 py-0.5 rounded-full bg-black/55 backdrop-blur-md border ${c.text === 'text-violet-300' ? 'border-violet-400/40' : c.text === 'text-cyan-300' ? 'border-cyan-400/40' : c.text === 'text-pink-300' ? 'border-pink-400/40' : 'border-amber-400/40'}`}>
                       <span className={`text-[10px] font-bold ${c.text}`}>{inst.subject}</span>
                     </div>
                   </div>
