@@ -2,37 +2,39 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Check, Star } from 'lucide-react'
 
+const PLAN_FEATURES = ["এক প্যাকেজে সবকিছু", "আনলিমিটেড পরীক্ষা", "একাডমিক ক্লাস", "সকল প্রিমিয়াম ফিচার"]
+
 const PLANS = [
   {
     duration: "১ মাস",
-    price: "২৪৯",
+    price: "৩৪৯",
     perMonth: null,
     savings: null,
-    features: ["সব ফিচার আনলক", "আনলিমিটেড মক টেস্ট", "Chorcha AI অ্যাক্সেস"],
+    features: PLAN_FEATURES,
     popular: false,
   },
   {
     duration: "৩ মাস",
-    price: "৪৪৯",
+    price: "৬৪৯",
     perMonth: null,
     savings: null,
-    features: ["সব ফিচার আনলক", "আনলিমিটেড মক টেস্ট", "Chorcha AI অ্যাক্সেস"],
+    features: PLAN_FEATURES,
     popular: false,
   },
   {
     duration: "৬ মাস",
-    price: "৫৯৯",
+    price: "৯৯৯",
     perMonth: null,
     savings: null,
-    features: ["সব ফিচার আনলক", "আনলিমিটেড মক টেস্ট", "Chorcha AI অ্যাক্সেস"],
+    features: PLAN_FEATURES,
     popular: false,
   },
   {
     duration: "১২ মাস",
-    price: "১২৯৯",
-    perMonth: "≈১০৮",
-    savings: "৫৬%",
-    features: ["সব ফিচার আনলক", "পরীক্ষা পর্যন্ত পুরো অ্যাক্সেস", "প্রায়োরিটি সাপোর্ট"],
+    price: "১৪৯৯",
+    perMonth: "≈১২৫",
+    savings: "৬৪%",
+    features: PLAN_FEATURES,
     popular: true,
   },
 ]
@@ -130,7 +132,7 @@ export default function Pricing({ data }) {
               চর্চা প্রিমিয়াম
             </span>
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4">এক প্যাকেজে সবকিছু</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4">এক প্যাকেজেই পাচ্ছো প্রস্তুতির সবকিছু</h2>
           <p className="text-sm sm:text-base text-white/40">যেকোনো প্লানে সব ফিচার আনলক — কোনো লুকানো শর্ত নেই।</p>
         </motion.div>
 

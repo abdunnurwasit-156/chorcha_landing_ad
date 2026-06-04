@@ -2,7 +2,10 @@
 
 @layer base {
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; overflow-x: hidden; }
+  /* overflow-x: clip instead of hidden — hides horizontal overflow WITHOUT
+     creating a scroll container, so `position: sticky` continues to work on
+     descendants (needed for the AppShowcase pinned-scroll effect). */
+  html { scroll-behavior: smooth; overflow-x: clip; }
   html[data-theme="light"] { color-scheme: light; }
   html:not([data-theme="light"]) { color-scheme: dark; }
   body {
@@ -10,12 +13,12 @@
     color: #E8F0EB;
     font-family: 'Google Sans', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+    overflow-x: clip;
     max-width: 100vw;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
   .font-inter { font-family: 'Google Sans', system-ui, sans-serif; }
-  #root { width: 100%; min-height: 100vh; overflow-x: hidden; }
+  #root { width: 100%; min-height: 100vh; overflow-x: clip; }
   img { max-width: 100%; }
 }
 

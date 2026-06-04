@@ -45,7 +45,7 @@ export const admissionData = {
     {
       icon: "file-text",
       title: "বিষয়ভিত্তিক টেস্ট পেপার",
-      desc: "সব সাবজেক্টের কম্পলিট টেস্ট পেপার — প্র্যাকটিসের জন্য",
+      desc: "সবগুলো বোর্ডের কম্পলিট টেস্ট পেপার — প্র্যাকটিসের জন্য",
       color: "blue",
     },
     {
@@ -105,8 +105,7 @@ export const admissionData = {
       experience: "৮ বছর",
       students: "১২,৪০০+",
       rating: "৪.৯",
-      avatar:
-        "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar: "/assets/teachers/IMG_2298.jpg",
     },
     {
       name: "তাসনিম আক্তার",
@@ -116,8 +115,7 @@ export const admissionData = {
       experience: "৬ বছর",
       students: "৯,৮০০+",
       rating: "৪.৮",
-      avatar:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar: "/assets/teachers/IMG_2299.jpg",
     },
     {
       name: "ডা. ইমতিয়াজ আহমেদ",
@@ -127,8 +125,7 @@ export const admissionData = {
       experience: "৭ বছর",
       students: "৮,২০০+",
       rating: "৪.৯",
-      avatar:
-        "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar: "/assets/teachers/IMG_2300.jpg",
     },
     {
       name: "মাহমুদ হোসেন",
@@ -138,8 +135,7 @@ export const admissionData = {
       experience: "৯ বছর",
       students: "১১,১০০+",
       rating: "৪.৭",
-      avatar:
-        "https://images.unsplash.com/photo-1582015752624-e8b1c75e3711?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar: "/assets/teachers/IMG_2301.jpg",
     },
     {
       name: "নাফিসা রহমান",
@@ -149,8 +145,7 @@ export const admissionData = {
       experience: "৫ বছর",
       students: "৭,৩০০+",
       rating: "৪.৮",
-      avatar:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar: "/assets/teachers/IMG_2302.jpg",
     },
     {
       name: "সাকিব আল হাসান",
@@ -160,8 +155,7 @@ export const admissionData = {
       experience: "৭ বছর",
       students: "৬,৯০০+",
       rating: "৪.৯",
-      avatar:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar: "/assets/teachers/IMG_2303.jpg",
     },
     {
       name: "মারিয়াম বেগম",
@@ -171,8 +165,7 @@ export const admissionData = {
       experience: "১০ বছর",
       students: "৮,৫০০+",
       rating: "৪.৭",
-      avatar:
-        "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar: "/assets/teachers/IMG_2304.jpg",
     },
     {
       name: "তৌফিক এলাহী",
@@ -182,8 +175,7 @@ export const admissionData = {
       experience: "৬ বছর",
       students: "৫,৬০০+",
       rating: "৪.৮",
-      avatar:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar: "/assets/teachers/IMG_2305.jpg",
     },
   ],
   toppers: [
@@ -279,8 +271,9 @@ export const hscData = {
   id: PAGES.HSC,
   badge: "এইচএসসি ২০২৮ সায়েন্স",
   heroHeadline: "ক্লাস, প্র্যাকটিস, প্রগ্রেস —",
-  heroHeadlineAccent: "সব এক জায়গায়",
-  heroSub: "HSC 28 সায়েন্সের সম্পূর্ণ প্রস্তুতি এখন একটাই প্রিমিয়াম প্যাকেজে",
+  heroHeadlineAccent: "সবকিছু একসাথে,",
+  heroRotatingWords: ["এক অ্যাপে!", "চর্চাতে!"],
+  heroSub: "HSC 28 বিজ্ঞান বিভাগের জন্য Chorcha-তে সম্পূর্ণ একডেমিক ক্লাস, টপিক ভিত্তিক MCQ ও CQ পরীক্ষা, বোর্ড প্রশ্ন ও ভার্সিটি প্রশ্নব্যাংক, ডাউট সলভিং চর্চা এআই সহ প্রস্তুতির সবকিছু, এক অ্যাপে!",
   heroStats: [
     { value: "১০ লাখ+", label: "শিক্ষার্থী", icon: "users", color: "violet" },
     { value: "১৩০+", label: "ভিডিও ক্লাস", icon: "video", color: "cyan" },
@@ -311,7 +304,7 @@ export const hscData = {
     {
       icon: "video",
       title: "একাডেমিক ভিডিও লেসন",
-      desc: "HSC 28 সিলেবাস অনুযায়ী সম্পূর্ণ ভিডিও লেকচার — পরিষ্কার ব্যাখ্যায়",
+      desc: "HSC 28 এর সিলেবাস অনুযায়ী দেশ সেরা শিক্ষকদের ডেডিকেটেড ভিডিও ক্লাস",
       color: "amber",
     },
     {
@@ -323,7 +316,7 @@ export const hscData = {
     {
       icon: "file-text",
       title: "বিষয়ভিত্তিক টেস্ট পেপার",
-      desc: "সব সাবজেক্টের কম্পলিট টেস্ট পেপার — প্র্যাকটিসের জন্য",
+      desc: "সবগুলো বোর্ডের কম্পলিট টেস্ট পেপার — প্র্যাকটিসের জন্য",
       color: "blue",
     },
     {
@@ -692,8 +685,7 @@ export const hscData = {
       experience: "৮ বছর",
       students: "১২,৪০০+",
       rating: "৪.৯",
-      avatar:
-        "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar: "/assets/teachers/IMG_2298.jpg",
     },
     {
       name: "তাসনিম আক্তার",
@@ -703,8 +695,7 @@ export const hscData = {
       experience: "৬ বছর",
       students: "৯,৮০০+",
       rating: "৪.৮",
-      avatar:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar: "/assets/teachers/IMG_2299.jpg",
     },
     {
       name: "ডা. ইমতিয়াজ আহমেদ",
@@ -714,8 +705,7 @@ export const hscData = {
       experience: "৭ বছর",
       students: "৮,২০০+",
       rating: "৪.৯",
-      avatar:
-        "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar: "/assets/teachers/IMG_2300.jpg",
     },
     {
       name: "মাহমুদ হোসেন",
@@ -725,8 +715,7 @@ export const hscData = {
       experience: "৯ বছর",
       students: "১১,১০০+",
       rating: "৪.৭",
-      avatar:
-        "https://images.unsplash.com/photo-1582015752624-e8b1c75e3711?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar: "/assets/teachers/IMG_2301.jpg",
     },
     {
       name: "নাফিসা রহমান",
@@ -736,8 +725,7 @@ export const hscData = {
       experience: "৫ বছর",
       students: "৭,৩০০+",
       rating: "৪.৮",
-      avatar:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar: "/assets/teachers/IMG_2302.jpg",
     },
     {
       name: "সাকিব আল হাসান",
@@ -747,8 +735,7 @@ export const hscData = {
       experience: "৭ বছর",
       students: "৬,৯০০+",
       rating: "৪.৯",
-      avatar:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar: "/assets/teachers/IMG_2303.jpg",
     },
     {
       name: "মারিয়াম বেগম",
@@ -758,8 +745,7 @@ export const hscData = {
       experience: "১০ বছর",
       students: "৮,৫০০+",
       rating: "৪.৭",
-      avatar:
-        "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar: "/assets/teachers/IMG_2304.jpg",
     },
     {
       name: "তৌফিক এলাহী",
@@ -769,8 +755,7 @@ export const hscData = {
       experience: "৬ বছর",
       students: "৫,৬০০+",
       rating: "৪.৮",
-      avatar:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&h=625&fit=crop&crop=faces&q=80",
+      avatar: "/assets/teachers/IMG_2305.jpg",
     },
   ],
   toppers: [

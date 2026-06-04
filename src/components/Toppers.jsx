@@ -25,8 +25,6 @@ function Card({ topper, i }) {
           <div className="text-sm font-bold text-white truncate">{topper.name}</div>
           <div className="flex items-center gap-1.5 text-xs">
             <span className={`w-1 h-1 rounded-full ${c.dot}`} />
-            <span className={c.rank}>{topper.rank}</span>
-            <span className="text-white/30">·</span>
             <span className="text-white/40 truncate">{topper.college}</span>
           </div>
         </div>

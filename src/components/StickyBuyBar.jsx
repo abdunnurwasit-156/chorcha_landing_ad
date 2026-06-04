@@ -18,12 +18,12 @@ function getRemaining(endsAt) {
   return { days, hours, mins, secs }
 }
 
-// price + "regular" price (≈ ২৪৯/মাস baseline) to show the discount
+// price + "regular" price (≈ ৩৪৯/মাস baseline) to show the discount
 const PLANS = [
-  { m: '১ মাস',  price: '২৪৯',  original: null,     save: null },
-  { m: '৩ মাস',  price: '৪৪৯',  original: '৭৪৭',    save: '৪০%' },
-  { m: '৬ মাস',  price: '৫৯৯',  original: '১,৪৯৪',  save: '৬০%' },
-  { m: '১২ মাস', price: '১২৯৯', original: '২,৯৮৮',  save: '৫৬%' },
+  { m: '১ মাস',  price: '৩৪৯',  original: null,      save: null },
+  { m: '৩ মাস',  price: '৬৪৯',  original: '১,০৪৭',   save: '৩৮%' },
+  { m: '৬ মাস',  price: '৯৯৯',  original: '২,০৯৪',   save: '৫২%' },
+  { m: '১২ মাস', price: '১৪৯৯', original: '৪,১৮৮',   save: '৬৪%' },
 ]
 
 export default function StickyBuyBar({ data }) {

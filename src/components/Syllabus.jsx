@@ -146,9 +146,9 @@ export default function Syllabus({ data }) {
             সিলেবাস
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4">
-            কোর্সে <span className="text-gradient-premium">কী কী আছে</span>
+            ভিডিও লেসনে <span className="text-gradient-premium">যা পাবে</span>
           </h2>
-          <p className="text-sm sm:text-base text-white/50">HSC 28 সিলেবাসের সম্পূর্ণ কভারেজ — বিষয় বেছে নাও, অধ্যায় ঘুরে দেখো</p>
+          <p className="text-sm sm:text-base text-white/50">HSC 28 সিলেবাসের উপর ডেডিকেটেড ভিডিও ক্লাস, তোমার যা লাগবে তাই!</p>
         </motion.div>
 
         <div className="flex flex-col gap-3">

@@ -145,12 +145,6 @@ export default function Instructors({ data }) {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#060C09] via-[#060C09]/35 to-transparent" />
 
-                    {/* Verified badge — top-right */}
-                    <div className="absolute top-2 right-2 flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-black/55 backdrop-blur-md border border-white/15">
-                      <BadgeCheck size={10} className="text-cyan-300" strokeWidth={2.5} />
-                      <span className="text-[9px] font-semibold text-white/90">ভেরিফাইড</span>
-                    </div>
-
                     {/* Subject chip — bottom-left */}
                     <div className={`absolute bottom-2 left-2 px-2 py-0.5 rounded-full bg-black/55 backdrop-blur-md border ${c.text === 'text-violet-300' ? 'border-violet-400/40' : c.text === 'text-cyan-300' ? 'border-cyan-400/40' : c.text === 'text-pink-300' ? 'border-pink-400/40' : 'border-amber-400/40'}`}>
                       <span className={`text-[10px] font-bold ${c.text}`}>{inst.subject}</span>

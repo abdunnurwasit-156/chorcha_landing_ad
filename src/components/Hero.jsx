@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Download } from "lucide-react";
 import { PAGES } from "../data/content";
 
@@ -7,6 +8,38 @@ const fadeUp = (delay = 0) => ({
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] },
 });
+
+// Word rotator — cycles through `words` with a slide-up + fade transition.
+function WordRotator({ words, interval = 2400, className = "" }) {
+  const [i, setI] = useState(0);
+
+  useEffect(() => {
+    if (!words || words.length < 2) return;
+    const id = setInterval(() => {
+      setI((prev) => (prev + 1) % words.length);
+    }, interval);
+    return () => clearInterval(id);
+  }, [words, interval]);
+
+  if (!words || words.length === 0) return null;
+
+  return (
+    <span className="relative inline-flex items-baseline overflow-hidden align-bottom">
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={words[i]}
+          initial={{ y: "100%", opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: "-100%", opacity: 0 }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className={`inline-block whitespace-nowrap ${className}`}
+        >
+          {words[i]}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+}
 
 export default function Hero({ data }) {
   const isHSC = data.id === PAGES.HSC;
@@ -42,6 +75,15 @@ export default function Hero({ data }) {
             {data.heroHeadline}{" "}
             <span className="text-gradient-premium">
               {data.heroHeadlineAccent}
+              {data.heroRotatingWords?.length > 0 && (
+                <>
+                  {" "}
+                  <WordRotator
+                    words={data.heroRotatingWords}
+                    className="text-gradient-premium"
+                  />
+                </>
+              )}
             </span>
           </motion.h1>
 
