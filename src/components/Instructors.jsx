@@ -148,9 +148,17 @@ export default function Instructors({ data }) {
                     {/* Lighter gradient — only a hint at the bottom */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#060C09]/60 via-transparent to-transparent" />
 
-                    {/* Subject chip — top-right on mobile, bottom-left on desktop */}
-                    <div className={`absolute top-2 right-2 sm:top-auto sm:right-auto sm:bottom-2 sm:left-2 px-2 py-0.5 rounded-full bg-black/55 backdrop-blur-md border ${c.text === 'text-violet-300' ? 'border-violet-400/40' : c.text === 'text-cyan-300' ? 'border-cyan-400/40' : c.text === 'text-pink-300' ? 'border-pink-400/40' : 'border-amber-400/40'}`}>
-                      <span className={`text-[10px] font-bold ${c.text}`}>{inst.subject}</span>
+                    {/* Subject — frosted glass tag */}
+                    <div
+                      className="absolute top-2 right-2 sm:top-auto sm:right-auto sm:bottom-2 sm:left-2 px-2.5 py-1 rounded-full border border-white/20"
+                      style={{
+                        background: 'rgba(255,255,255,0.10)',
+                        backdropFilter: 'blur(14px) saturate(180%)',
+                        WebkitBackdropFilter: 'blur(14px) saturate(180%)',
+                        boxShadow: 'inset 0 1px 0 0 rgba(255,255,255,0.15)',
+                      }}
+                    >
+                      <span className="text-[10px] font-semibold text-white tracking-wide">{inst.subject}</span>
                     </div>
                   </div>
 

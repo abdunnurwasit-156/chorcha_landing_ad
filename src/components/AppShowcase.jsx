@@ -59,35 +59,43 @@ const videos = [
   },
 ];
 
-// Lazy video — only plays when actually on screen (saves GPU/battery on mobile)
+// Lazy video — defers loading until first scroll-into-view, then plays
+// continuously. We DON'T pause when scrolling away — pausing & re-playing
+// causes a noticeable reload/stutter on mobile when the user comes back.
+// Trade-off: once a video is in view it keeps running in memory.
 function LazyVideo({ src, className }) {
   const ref = useRef(null);
+  const startedRef = useRef(false);
+
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !startedRef.current) {
+            startedRef.current = true;
+            // Set src now (defers network fetch until needed)
+            if (!el.src) el.src = src;
             el.play().catch(() => {});
-          } else {
-            el.pause();
+            io.disconnect();
           }
         });
       },
-      { threshold: 0.25, rootMargin: "100px" }
+      { threshold: 0.1, rootMargin: "200px" }
     );
     io.observe(el);
     return () => io.disconnect();
-  }, []);
+  }, [src]);
+
   return (
     <video
       ref={ref}
-      src={src}
+      // src is set imperatively in the observer to defer network fetch
       loop
       muted
       playsInline
-      preload="metadata"
+      preload="none"
       className={className}
     />
   );
