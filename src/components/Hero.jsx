@@ -1,7 +1,47 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Download } from "lucide-react";
+import { Download, Play } from "lucide-react";
 import { PAGES } from "../data/content";
+
+// Lazy YouTube facade — shows poster + play button on initial render,
+// only loads the actual iframe (which pulls ~600KB+ of YouTube SDK)
+// when the user clicks. Massive mobile-perf win.
+const YT_VIDEO_ID = "awKirOXVI8s";
+function YouTubeFacade() {
+  const [playing, setPlaying] = useState(false);
+  if (playing) {
+    return (
+      <iframe
+        src={`https://www.youtube.com/embed/${YT_VIDEO_ID}?autoplay=1&controls=1&modestbranding=1&rel=0&playsinline=1`}
+        title="Chorcha প্রোমো"
+        className="absolute inset-0 w-full h-full"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowFullScreen
+      />
+    );
+  }
+  return (
+    <button
+      onClick={() => setPlaying(true)}
+      className="absolute inset-0 w-full h-full group cursor-pointer"
+      aria-label="Play video"
+    >
+      <img
+        src={`https://i.ytimg.com/vi/${YT_VIDEO_ID}/hqdefault.jpg`}
+        alt="Chorcha প্রোমো"
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-black/15 group-hover:bg-black/25 transition-colors" />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-600 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+          <Play size={28} className="text-white fill-current ml-1" />
+        </div>
+      </div>
+    </button>
+  );
+}
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -127,14 +167,7 @@ export default function Hero({ data }) {
               className="relative w-full rounded-[20px] sm:rounded-[24px] overflow-hidden border border-white/10 shadow-2xl"
               style={{ aspectRatio: '16 / 9' }}
             >
-              <iframe
-                src="https://www.youtube.com/embed/awKirOXVI8s?controls=1&modestbranding=1&rel=0&playsinline=1"
-                title="Chorcha প্রোমো"
-                className="absolute inset-0 w-full h-full"
-                allow="autoplay; encrypted-media; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
-              />
+              <YouTubeFacade />
             </div>
           </div>
         </motion.div>

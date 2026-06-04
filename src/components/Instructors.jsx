@@ -141,6 +141,8 @@ export default function Instructors({ data }) {
                     <img
                       src={inst.avatar}
                       alt={inst.name}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#060C09] via-[#060C09]/35 to-transparent" />

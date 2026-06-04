@@ -59,6 +59,40 @@ const videos = [
   },
 ];
 
+// Lazy video — only plays when actually on screen (saves GPU/battery on mobile)
+function LazyVideo({ src, className }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            el.play().catch(() => {});
+          } else {
+            el.pause();
+          }
+        });
+      },
+      { threshold: 0.25, rootMargin: "100px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <video
+      ref={ref}
+      src={src}
+      loop
+      muted
+      playsInline
+      preload="metadata"
+      className={className}
+    />
+  );
+}
+
 // One video card — used in both mobile pinned-scroll and desktop grid.
 function MobileCard({ v }) {
   return (
@@ -69,7 +103,7 @@ function MobileCard({ v }) {
       <div className="relative">
         <div className={`absolute inset-2 rounded-[28px] blur-xl opacity-25 ${v.bg}`} />
         <div className="relative w-[180px] rounded-[28px] overflow-hidden shadow-2xl" style={{ aspectRatio: '9/19.5' }}>
-          <video src={v.src} autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" />
+          <LazyVideo src={v.src} className="absolute inset-0 w-full h-full object-cover" />
         </div>
       </div>
       <p className="text-center text-xs text-white/60 mt-3 leading-snug px-1">
@@ -234,7 +268,7 @@ export default function AppShowcase({ data }) {
                 <div className="relative">
                   <div className={`absolute inset-0 rounded-[36px] blur-2xl opacity-35 scale-90 ${v.bg}`} />
                   <div className="relative w-56 rounded-[36px] overflow-hidden shadow-2xl" style={{ aspectRatio: "9/19.5" }}>
-                    <video src={v.src} autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" />
+                    <LazyVideo src={v.src} className="absolute inset-0 w-full h-full object-cover" />
                   </div>
                 </div>
                 <p className="text-center text-sm sm:text-base text-white/60 mt-4 max-w-[220px]">
